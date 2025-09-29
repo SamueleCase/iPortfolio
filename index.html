@@ -1,828 +1,843 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Giulia Fadlon - Portfolio Personale</title>
-  <meta content="Portfolio personale di Giulia Fadlon - Designer, Developer, Freelancer" name="description">
-  <meta content="portfolio, design, sviluppo web, freelancer, Giulia Fadlon" name="keywords">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giulia Fadlon - Social Media Manager & Graphic Designer</title>
+    <meta name="description" content="Portfolio professionale di Giulia Fadlon - Social Media Manager e Graphic Designer specializzata in brand identity e comunicazione digitale">
+    <meta name="keywords" content="social media manager, graphic designer, brand identity, comunicazione digitale, Giulia Fadlon">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 </head>
 
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Giulia Fadlon</h1>
-    </a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">Giulia Fadlon</a>
 
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">Chi Sono</a></li>
+                <li><a href="#services" class="nav-link">Servizi</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#skills" class="nav-link">Competenze</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonianze</a></li>
+                <li><a href="#contact" class="nav-link">Contatti</a></li>
+            </ul>
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> Chi sono</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Curriculum</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Servizi</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Altro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Opzione 1</a></li>
-            <li class="dropdown"><a href="#"><span>Sottomenù</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Sottomenù 1</a></li>
-                <li><a href="#">Sottomenù 2</a></li>
-                <li><a href="#">Sottomenù 3</a></li>
-                <li><a href="#">Sottomenù 4</a></li>
-                <li><a href="#">Sottomenù 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Opzione 2</a></li>
-            <li><a href="#">Opzione 3</a></li>
-            <li><a href="#">Opzione 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contatti</a></li>
-      </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-  </header>
-
-  <main class="main">
-
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content animate-fadeInLeft">
+                <h1>Ciao, sono <br><span class="text-pink">Giulia Fadlon</span></h1>
+                <p class="subtitle">Social Media Manager & Graphic Designer</p>
+                <p class="description">
+                    Trasformo le idee in storie visive che conquistano e coinvolgono.
+                    Creo brand identity memorabili e strategie digitali che fanno la differenza.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> Scopri i miei lavori
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Parliamone
+                    </a>
+                </div>
+            </div>
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-  <h2>Giulia Fadlon</h2>
-  <p>Sono <span class="typed" data-typed-items="Designer, Sviluppatrice, Freelancer, Fotografa">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-      </div>
-
-    </section><!-- /Hero Section -->
+            <div class="hero-image animate-fadeInRight">
+                <div class="hero-image-container">
+                    <img src="assets/img/giulia-profile.jpg" alt="Giulia Fadlon" class="profile-photo">
+                    <div class="hero-decorations">
+                        <div class="decoration decoration-1"></div>
+                        <div class="decoration decoration-2"></div>
+                        <div class="decoration decoration-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Chi sono</h2>
-  <p>Benvenuti nel mio portfolio personale. Sono Giulia Fadlon, appassionata di design e sviluppo web. Qui troverai informazioni su di me, il mio percorso e i miei progetti.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>UI/UX Designer &amp; Sviluppatrice Web.</h2>
-            <p class="fst-italic py-3">
-              Sono una professionista creativa e dinamica, con esperienza nella progettazione di interfacce e nello sviluppo di siti web moderni e funzionali.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Data di nascita:</strong> <span>1 Maggio 1995</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Sito web:</strong> <span>www.giuliafadlon.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Telefono:</strong> <span>+39 333 1234567</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Città:</strong> <span>Milano, Italia</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Età:</strong> <span>30</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Titolo di studio:</strong> <span>Laurea Magistrale</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>giulia.fadlon@email.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Disponibile</span></li>
-                </ul>
-              </div>
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 class="section-title">Chi Sono</h2>
+                <p class="section-subtitle">
+                    La creatività è la mia passione, il design è la mia professione
+                </p>
             </div>
-            <p class="py-3">
-              Lavoro con passione e dedizione per offrire soluzioni creative e personalizzate. Mi piace collaborare con clienti e team per realizzare progetti di successo.
-            </p>
-          </div>
-        </div>
 
-      </div>
+            <div class="about-content">
+                <div class="about-image animate-fadeInLeft">
+                    <img src="assets/img/giulia-about.jpg" alt="Giulia Fadlon al lavoro" class="about-photo">
+                </div>
 
-    </section><!-- /About Section -->
+                <div class="about-text animate-fadeInRight">
+                    <h3>Una professionista dedicata al successo dei tuoi progetti</h3>
+                    <p>
+                        Con oltre 5 anni di esperienza nel mondo del design e della comunicazione digitale,
+                        aiuto brand e professionisti a raccontare la loro storia attraverso contenuti visivi
+                        che emozionano e convertono.
+                    </p>
+                    <p>
+                        La mia filosofia è semplice: ogni progetto è unico e merita un approccio personalizzato.
+                        Dal concept alla realizzazione, seguo ogni dettaglio con cura maniacale per garantire
+                        risultati che superino le aspettative.
+                    </p>
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+                    <div class="about-stats">
+                        <div class="stat-item hover-lift">
+                            <div class="stat-number" data-count="150">0</div>
+                            <div class="stat-label">Progetti Completati</div>
+                        </div>
+                        <div class="stat-item hover-lift">
+                            <div class="stat-number" data-count="98">0</div>
+                            <div class="stat-label">Clienti Soddisfatti</div>
+                        </div>
+                        <div class="stat-item hover-lift">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Anni di Esperienza</div>
+                        </div>
+                        <div class="stat-item hover-lift">
+                            <div class="stat-number" data-count="24">0</div>
+                            <div class="stat-label">Supporto h/7</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
         </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Competenze</h2>
-  <p>Le mie principali competenze tecniche e creative</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Curriculum</h2>
-  <p>Scopri il mio percorso formativo e professionale, le esperienze e le competenze acquisite negli anni.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Profilo</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Giulia Fadlon</h4>
-              <p><em>Designer grafica e sviluppatrice web con oltre 3 anni di esperienza nella realizzazione di materiali digitali e cartacei, dalla fase di concept fino al prodotto finale.</em></p>
-              <ul>
-                <li>Milano, Italia</li>
-                <li>+39 333 1234567</li>
-                <li>giulia.fadlon@email.com</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Formazione</h3>
-            <div class="resume-item">
-              <h4>Laurea Magistrale in Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Politecnico di Milano, Milano</em></p>
-              <p>Specializzazione in progettazione grafica e comunicazione visiva. Approfondimento delle tecniche di design e sviluppo di progetti innovativi.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Laurea Triennale in Graphic Design</h4>
-              <h5>2010 - 2014</h5>
-              <p><em>Politecnico di Milano, Milano</em></p>
-              <p>Studio delle basi del design, tipografia, fotografia e sviluppo web. Partecipazione a progetti multidisciplinari.</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Esperienza Professionale</h3>
-            <div class="resume-item">
-              <h4>Senior Graphic Designer</h4>
-              <h5>2019 - Presente</h5>
-              <p><em>Studio Creativo, Milano</em></p>
-              <ul>
-                <li>Responsabile della progettazione e realizzazione di materiali grafici e digitali.</li>
-                <li>Coordinamento di un team di 7 designer e gestione dei progetti.</li>
-                <li>Supervisione della qualità e accuratezza dei materiali prodotti.</li>
-                <li>Gestione efficiente dei budget di progetto.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Graphic Designer</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Agenzia Pubblicitaria, Milano</em></p>
-              <ul>
-                <li>Sviluppo di programmi di marketing (loghi, brochure, infografiche, presentazioni e pubblicità).</li>
-                <li>Gestione di più progetti contemporaneamente rispettando le scadenze.</li>
-                <li>Consulenza ai clienti sulle soluzioni grafiche più adatte.</li>
-                <li>Creazione di presentazioni e proposte mensili per clienti e account manager.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Portfolio</h2>
-  <p>Scopri alcuni dei miei progetti realizzati. Le descrizioni sono demo tradotte in italiano.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">Tutti</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Prodotto</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Libri</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="Altri dettagli" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Servizi</h2>
-  <p>Scopri i servizi che offro come designer e sviluppatrice freelance.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Progettazione Grafica</a></h4>
-              <p class="description">Realizzazione di loghi, brochure, materiali promozionali e identità visiva personalizzata.</p>
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 class="section-title">I Miei Servizi</h2>
+                <p class="section-subtitle">
+                    Soluzioni creative personalizzate per ogni esigenza
+                </p>
             </div>
-          </div>
-          <!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Sviluppo Web</a></h4>
-              <p class="description">Creazione di siti web moderni, responsive e ottimizzati per ogni esigenza.</p>
+            <div class="services-grid">
+                <div class="service-card animate-fadeInUp hover-lift">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4 class="service-title">Brand Identity</h4>
+                    <p class="service-description">
+                        Creo identità visive uniche che rispecchiano l'essenza del tuo brand.
+                        Logo, palette colori, tipografia e guidelines complete.
+                    </p>
+                </div>
+
+                <div class="service-card animate-fadeInUp hover-lift">
+                    <div class="service-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h4 class="service-title">Social Media Management</h4>
+                    <p class="service-description">
+                        Gestione completa dei tuoi canali social con contenuti coinvolgenti,
+                        strategie mirate e community engagement autentico.
+                    </p>
+                </div>
+
+                <div class="service-card animate-fadeInUp hover-lift">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h4 class="service-title">Content Creation</h4>
+                    <p class="service-description">
+                        Produzione di contenuti visual di alta qualità: foto, video, grafiche
+                        e storytelling che catturano l'attenzione.
+                    </p>
+                </div>
+
+                <div class="service-card animate-fadeInUp hover-lift">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h4 class="service-title">Digital Marketing</h4>
+                    <p class="service-description">
+                        Strategie di marketing digitale data-driven per aumentare la tua
+                        visibilità online e raggiungere i tuoi obiettivi di business.
+                    </p>
+                </div>
+
+                <div class="service-card animate-fadeInUp hover-lift">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="service-title">Web Design</h4>
+                    <p class="service-description">
+                        Progettazione di siti web responsive e user-friendly che convertono
+                        i visitatori in clienti con un design moderno e funzionale.
+                    </p>
+                </div>
+
+                <div class="service-card animate-fadeInUp hover-lift">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="service-title">Consulenza Strategica</h4>
+                    <p class="service-description">
+                        Analisi approfondita del tuo business per sviluppare strategie
+                        di comunicazione efficaci e orientate ai risultati.
+                    </p>
+                </div>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Consulenza UX/UI</a></h4>
-              <p class="description">Analisi e ottimizzazione dell'esperienza utente e dell'interfaccia grafica.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Fotografia</a></h4>
-              <p class="description">Servizi fotografici professionali per eventi, prodotti e portfolio personale.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Branding</a></h4>
-              <p class="description">Sviluppo e gestione dell'immagine coordinata per aziende e professionisti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-            <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Supporto Continuo</a></h4>
-              <p class="description">Assistenza e supporto costante durante tutte le fasi del progetto.</p>
-            </div>
-          </div><!-- End Service Item -->
-
         </div>
+    </section>
 
-      </div>
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 class="section-title">Portfolio</h2>
+                <p class="section-subtitle">
+                    Una selezione dei miei progetti più significativi
+                </p>
+            </div>
 
-    </section><!-- /Services Section -->
+            <div class="portfolio-filters animate-fadeInUp">
+                <button class="filter-btn active" data-filter="*">Tutti</button>
+                <button class="filter-btn" data-filter="brand">Brand Identity</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="print">Grafica</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item brand animate-fadeInUp">
+                    <img src="assets/img/portfolio/brand-1.jpg" alt="Brand Identity Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h4 class="portfolio-title">Luxury Brand Identity</h4>
+                        <p class="portfolio-category">Brand Design</p>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/brand-1.jpg" class="portfolio-link" data-lightbox="portfolio">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item social animate-fadeInUp">
+                    <img src="assets/img/portfolio/social-1.jpg" alt="Social Media Campaign" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h4 class="portfolio-title">Social Campaign</h4>
+                        <p class="portfolio-category">Social Media</p>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/social-1.jpg" class="portfolio-link" data-lightbox="portfolio">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item web animate-fadeInUp">
+                    <img src="assets/img/portfolio/web-1.jpg" alt="Website Design" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h4 class="portfolio-title">E-commerce Website</h4>
+                        <p class="portfolio-category">Web Design</p>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/web-1.jpg" class="portfolio-link" data-lightbox="portfolio">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item print animate-fadeInUp">
+                    <img src="assets/img/portfolio/print-1.jpg" alt="Print Design" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h4 class="portfolio-title">Corporate Brochure</h4>
+                        <p class="portfolio-category">Grafica</p>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/print-1.jpg" class="portfolio-link" data-lightbox="portfolio">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item brand animate-fadeInUp">
+                    <img src="assets/img/portfolio/brand-2.jpg" alt="Restaurant Brand" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h4 class="portfolio-title">Restaurant Rebranding</h4>
+                        <p class="portfolio-category">Brand Design</p>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/brand-2.jpg" class="portfolio-link" data-lightbox="portfolio">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item social animate-fadeInUp">
+                    <img src="assets/img/portfolio/social-2.jpg" alt="Instagram Strategy" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h4 class="portfolio-title">Instagram Strategy</h4>
+                        <p class="portfolio-category">Social Media</p>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/social-2.jpg" class="portfolio-link" data-lightbox="portfolio">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 class="section-title">Le Mie Competenze</h2>
+                <p class="section-subtitle">
+                    Tecnologie e strumenti che padroneggio per i tuoi progetti
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item animate-fadeInUp">
+                    <div class="skill-header">
+                        <span class="skill-name">Adobe Creative Suite</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item animate-fadeInUp">
+                    <div class="skill-header">
+                        <span class="skill-name">Social Media Management</span>
+                        <span class="skill-percentage">92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="92"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item animate-fadeInUp">
+                    <div class="skill-header">
+                        <span class="skill-name">Brand Strategy</span>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="88"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item animate-fadeInUp">
+                    <div class="skill-header">
+                        <span class="skill-name">Web Design</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item animate-fadeInUp">
+                    <div class="skill-header">
+                        <span class="skill-name">Content Creation</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item animate-fadeInUp">
+                    <div class="skill-header">
+                        <span class="skill-name">Digital Marketing</span>
+                        <span class="skill-percentage">82%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="82"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Testimonianze</h2>
-  <p>Cosa dicono i miei clienti e collaboratori</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 class="section-title">Cosa Dicono di Me</h2>
+                <p class="section-subtitle">
+                    La soddisfazione dei miei clienti è la mia priorità
                 </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>CEO &amp; Fondatore</h4>
-              </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
+            <div class="testimonials-container">
+                <div class="testimonial-item animate-fadeInUp">
+                    <div class="testimonial-content">
+                        "Giulia ha trasformato completamente la nostra presenza online.
+                        Il suo approccio creativo e la sua professionalità hanno portato
+                        risultati straordinari. Consigliatissima!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/img/testimonials/client-1.jpg" alt="Marco Rossi" class="author-photo">
+                        <div class="author-info">
+                            <h4>Marco Rossi</h4>
+                            <p class="author-role">CEO, Innovation Lab</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Titolare Negozio</h4>
-              </div>
-            </div><!-- End testimonial item -->
+                <div class="testimonial-item animate-fadeInUp">
+                    <div class="testimonial-content">
+                        "Un talento incredibile! Giulia ha saputo interpretare perfettamente
+                        la nostra visione e tradurla in un brand identity che ci rappresenta
+                        al 100%. Grazie infinite!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/img/testimonials/client-2.jpg" alt="Sara Bianchi" class="author-photo">
+                        <div class="author-info">
+                            <h4>Sara Bianchi</h4>
+                            <p class="author-role">Founder, Bloom Studio</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelance</h4>
-              </div>
-            </div><!-- End testimonial item -->
+                <div class="testimonial-item animate-fadeInUp">
+                    <div class="testimonial-content">
+                        "Collaborare con Giulia è stata un'esperienza fantastica.
+                        Competente, creativa e sempre disponibile. I risultati parlano
+                        da soli: +300% di engagement sui social!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/img/testimonials/client-3.jpg" alt="Luca Verdi" class="author-photo">
+                        <div class="author-info">
+                            <h4>Luca Verdi</h4>
+                            <p class="author-role">Marketing Manager, Tech Solutions</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Imprenditore</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
+                <div class="testimonial-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
         </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-  <h2>Contatti</h2>
-  <p>Contattami per collaborazioni, richieste o informazioni.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Indirizzo</h3>
-                  <p>Via Roma 10, Milano, 20100</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Telefono</h3>
-                  <p>+39 333 1234567</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>giulia.fadlon@email.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 class="section-title">Parliamone Insieme</h2>
+                <p class="section-subtitle">
+                    Pronta a trasformare le tue idee in realtà? Contattami!
+                </p>
             </div>
-          </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+            <div class="contact-content">
+                <div class="contact-info animate-fadeInLeft">
+                    <h3>Informazioni di Contatto</h3>
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Il tuo nome</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>giulia.fadlon@email.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefono</h4>
+                            <p>+39 333 123 4567</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Posizione</h4>
+                            <p>Milano, Italia</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Orari</h4>
+                            <p>Lun-Ven: 9:00-18:00</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">La tua email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
+                <form class="contact-form animate-fadeInRight" id="contact-form">
+                    <h3>Invia un Messaggio</h3>
 
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Oggetto</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome Completo *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
 
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Messaggio</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Invio in corso...</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Il tuo messaggio è stato inviato. Grazie!</div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Oggetto *</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
 
-                  <button type="submit">Invia messaggio</button>
-                </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Messaggio *</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                    </div>
 
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Invia Messaggio
+                    </button>
+                </form>
+            </div>
         </div>
+    </section>
 
-      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Giulia Fadlon</h3>
+                    <p>Social Media Manager & Graphic Designer appassionata di storytelling visivo e comunicazione autentica.</p>
+                </div>
 
-    </section><!-- /Contact Section -->
+                <div class="footer-section">
+                    <h3>Servizi</h3>
+                    <ul>
+                        <li>Brand Identity</li>
+                        <li>Social Media Management</li>
+                        <li>Content Creation</li>
+                        <li>Web Design</li>
+                    </ul>
+                </div>
 
-  </main>
+                <div class="footer-section">
+                    <h3>Seguimi</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-  <footer id="footer" class="footer position-relative light-background">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Giulia Fadlon. Tutti i diritti riservati. | Designed with <i class="fas fa-heart text-pink"></i> for creativity</p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+    <!-- Scroll to Top -->
+    <a href="#hero" class="scroll-top" id="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-  </footer>
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        // Mobile Navigation
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+        });
 
+        // Navbar Background on Scroll
+        const navbar = document.getElementById('navbar');
+        const scrollTop = document.getElementById('scroll-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Active Nav Link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target + (target === 24 ? '/7' : '+');
+                    }
+                };
+
+                updateCount();
+            });
+        }
+
+        // Skills Animation
+        function animateSkills() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        }
+
+        // Portfolio Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === '*' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonials Slider
+        let currentTestimonial = 1;
+        const testimonials = document.querySelectorAll('.testimonial-item');
+        const dots = document.querySelectorAll('.dot');
+
+        function showTestimonial(n) {
+            if (n > testimonials.length) { currentTestimonial = 1; }
+            if (n < 1) { currentTestimonial = testimonials.length; }
+
+            testimonials.forEach(testimonial => {
+                testimonial.style.display = 'none';
+            });
+
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+
+            if (testimonials[currentTestimonial - 1]) {
+                testimonials[currentTestimonial - 1].style.display = 'block';
+                dots[currentTestimonial - 1].classList.add('active');
+            }
+        }
+
+        function currentSlide(n) {
+            showTestimonial(currentTestimonial = n);
+        }
+
+        // Auto-slide testimonials
+        setInterval(() => {
+            currentTestimonial++;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Initialize
+        showTestimonial(currentTestimonial);
+
+        // Form Handling
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Simple form validation and submission simulation
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Here you would typically send the data to your server
+            alert('Messaggio inviato con successo! Ti risponderò al più presto.');
+            this.reset();
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+
+                    // Trigger counter animation when about section is visible
+                    if (entry.target.id === 'about') {
+                        animateCounters();
+                    }
+
+                    // Trigger skills animation when skills section is visible
+                    if (entry.target.id === 'skills') {
+                        animateSkills();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fadeInUp, .animate-fadeInLeft, .animate-fadeInRight').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            observer.observe(el);
+        });
+
+        // Observe sections for counter and skill animations
+        observer.observe(document.getElementById('about'));
+        observer.observe(document.getElementById('skills'));
+    </script>
 </body>
-
 </html>
