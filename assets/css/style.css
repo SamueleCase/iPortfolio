@@ -36,6 +36,10 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Animation Performance */
+  --animation-speed: 1;
+  --animation-intensity: 1;
 }
 
 /* Reset & Base Styles */
@@ -54,9 +58,10 @@ body {
   font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--dark-gray);
-  background: var(--cream-white) url('../img/modern-background.svg') no-repeat center center fixed;
+  background: var(--cream-white) url('../img/animated-background.svg') no-repeat center center fixed;
   background-size: cover;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* Custom Scrollbar */
@@ -1516,4 +1521,236 @@ p {
 .footer-section p,
 .footer-section li {
   color: var(--light-gray) !important;
+}
+
+/* Advanced Dynamic Animations */
+@keyframes backgroundShift {
+  0%, 100% {
+    background-position: 0% 50%;
+    transform: scale(1);
+  }
+  25% {
+    background-position: 25% 75%;
+    transform: scale(1.02);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: scale(1);
+  }
+  75% {
+    background-position: 75% 25%;
+    transform: scale(1.01);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-15px) rotate(2deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateY(-20px) rotate(1deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes colorShift {
+  0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+  33% { filter: hue-rotate(5deg) brightness(1.05); }
+  66% { filter: hue-rotate(-3deg) brightness(0.98); }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow: var(--shadow-soft);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: var(--shadow-medium);
+    transform: scale(1.02);
+  }
+}
+
+/* Dynamic background effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(209, 156, 161, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(232, 180, 166, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
+  z-index: -1;
+  animation: backgroundShift calc(30s / var(--animation-speed)) ease-in-out infinite;
+  pointer-events: none;
+  opacity: calc(0.8 * var(--animation-intensity));
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(45deg, transparent 49%, rgba(209, 156, 161, 0.02) 50%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, rgba(194, 132, 137, 0.02) 50%, transparent 51%);
+  background-size: 60px 60px;
+  z-index: -1;
+  animation: gentleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Enhanced card animations */
+.service-card,
+.portfolio-item,
+.skill-item,
+.stat-item,
+.testimonial-item,
+.contact-info,
+.contact-form {
+  animation: colorShift 15s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover,
+.portfolio-item:hover,
+.skill-item:hover,
+.stat-item:hover {
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+/* Floating shapes animation */
+.floating-shape {
+  animation: gentleFloat 8s ease-in-out infinite;
+  filter: blur(0.5px);
+  transition: all 0.3s ease;
+}
+
+.floating-shape:nth-child(even) {
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+.floating-shape:nth-child(3n) {
+  animation-delay: -2s;
+}
+
+.floating-shape:nth-child(4n) {
+  animation-delay: -4s;
+}
+
+/* Enhanced scroll animations */
+.animate-fadeInUp,
+.animate-fadeInLeft,
+.animate-fadeInRight {
+  animation-fill-mode: both;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fadeInUp.in-view {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fadeInLeft.in-view {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fadeInRight.in-view {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+/* Interactive hover effects */
+.hero-image-container:hover {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+.hero-decorations .decoration:hover {
+  animation: gentleFloat 4s ease-in-out infinite;
+  transform: scale(1.5);
+}
+
+/* Dynamic button effects */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Advanced navigation effects */
+.navbar {
+  backdrop-filter: blur(20px) saturate(180%);
+  animation: colorShift 20s ease-in-out infinite;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(209, 156, 161, 0.1), transparent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* Performance optimizations */
+.service-card,
+.portfolio-item,
+.skill-item,
+.stat-item {
+  will-change: transform, box-shadow;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .floating-shape,
+  .service-card,
+  .portfolio-item,
+  .skill-item,
+  .stat-item,
+  .hero-image-container {
+    animation: none !important;
+  }
+
+  .btn::before {
+    display: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
 }
