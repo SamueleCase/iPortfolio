@@ -17,6 +17,9 @@ class HorizontalScroll {
         // Hide preloader
         this.hidePreloader();
 
+        // Initialize typing effect
+        this.initTypingEffect();
+
         // Bind scroll events
         this.bindScrollEvents();
 
@@ -43,6 +46,53 @@ class HorizontalScroll {
                 }, 500);
             }
         });
+    }
+
+    // ===== TYPING EFFECT =====
+    initTypingEffect() {
+        const typedTextElement = document.getElementById('typed-text');
+        if (!typedTextElement) return;
+
+        const texts = [
+            'Social Media Manager',
+            'Graphic Designer',
+            'Content Creator',
+            'Brand Strategist'
+        ];
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        const type = () => {
+            const currentText = texts[textIndex];
+
+            if (isDeleting) {
+                typedTextElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typedTextElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                // Pause at end
+                typingSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500;
+            }
+
+            setTimeout(type, typingSpeed);
+        };
+
+        // Start typing effect after a short delay
+        setTimeout(type, 1000);
     }
 
     bindScrollEvents() {
