@@ -317,7 +317,6 @@ p {
 .portfolio-title {
   position: absolute;
   top: 46%;
-  left: 7%;
   font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 900;
   font-family: var(--font-secondary);
@@ -1381,4 +1380,146 @@ p {
 ::selection {
   background: var(--soft-pink);
   color: var(--dark-gray);
+}
+
+
+/* ===== DEVICE FRAME - TABLET MOCKUP ===== */
+
+/* Device Frame Container */
+.device-frame {
+  position: relative;
+  width: 95vw;
+  max-width: 1400px;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(145deg, #2c2c2e, #1c1c1e);
+  border-radius: 35px;
+  padding: 35px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.3),
+    0 10px 30px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  animation: deviceAppear 1s ease-out;
+  z-index: 1;
+}
+
+@keyframes deviceAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Tablet Bezel/Border */
+.device-bezel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Front Camera */
+.device-camera {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle at 30% 30%, #4a5568, #1a202c);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.device-camera::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 3px;
+  height: 3px;
+  background: rgba(100, 150, 255, 0.3);
+  border-radius: 50%;
+}
+
+/* Device Screen */
+.device-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(232, 233, 237, 0.95) 0%, rgba(245, 245, 247, 0.95) 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Animated Background Decorations - Global */
+.bg-decoration {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  animation: float-global 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-decoration-1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, var(--primary-pink), var(--accent-pink));
+  top: -15%;
+  right: 5%;
+  animation-delay: 0s;
+}
+
+.bg-decoration-2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--gold-accent), var(--rose-gold));
+  bottom: -10%;
+  left: 10%;
+  animation-delay: 3s;
+}
+
+.bg-decoration-3 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, var(--soft-pink), var(--blush-pink));
+  top: 30%;
+  left: -10%;
+  animation-delay: 6s;
+}
+
+.bg-decoration-4 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--accent-pink), var(--primary-pink));
+  top: 50%;
+  right: -8%;
+  animation-delay: 9s;
+}
+
+@keyframes float-global {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-40px) translateX(30px) scale(1.15) rotate(90deg);
+  }
+  50% {
+    transform: translateY(30px) translateX(-30px) scale(0.9) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-20px) translateX(40px) scale(1.1) rotate(270deg);
+  }
 }
