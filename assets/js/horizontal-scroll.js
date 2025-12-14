@@ -40,6 +40,9 @@ class HorizontalScroll {
 
         // Initialize Instagram buttons
         this.initInstagramButtons();
+
+        // Initialize hero highlights navigation
+        this.initHeroHighlights();
     }
 
     hidePreloader() {
@@ -418,6 +421,18 @@ class HorizontalScroll {
                 // No action for now, button remains visually active
             });
         }
+    }
+
+    // ===== HERO HIGHLIGHTS NAVIGATION =====
+    initHeroHighlights() {
+        const highlights = document.querySelectorAll('.hero-highlight');
+        highlights.forEach(highlight => {
+            highlight.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = parseInt(highlight.getAttribute('data-section'));
+                this.goToSection(section);
+            });
+        });
     }
 }
 
