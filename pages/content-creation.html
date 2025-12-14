@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation - Giulia Fadlon</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-pink: #d19ca1;
+            --soft-pink: #f4d4d6;
+            --accent-pink: #c28489;
+            --deep-pink: #b07378;
+            --cream-white: #ffffff;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-secondary: 'Playfair Display', Georgia, serif;
+            --shadow-medium: 0 8px 35px rgba(209, 156, 161, 0.15);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: url('../assets/img/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--dark-gray);
+        }
+
+        .service-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            box-shadow: var(--shadow-medium);
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateX(-5px);
+        }
+
+        .service-header {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-pink), var(--accent-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .service-title {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .service-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .service-section {
+            margin: 2.5rem 0;
+        }
+
+        .service-section h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.75rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .service-section h3 i {
+            color: var(--primary-pink);
+        }
+
+        .benefits-list, .includes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li, .includes-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .benefits-list li:hover, .includes-list li:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(5px);
+        }
+
+        .benefits-list li i, .includes-list li i {
+            color: var(--primary-pink);
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+
+        .benefits-list li div, .includes-list li div {
+            flex: 1;
+        }
+
+        .benefits-list li strong, .includes-list li strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark-gray);
+        }
+
+        .benefits-list li p, .includes-list li p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            line-height: 1.5;
+        }
+
+        .examples {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .examples p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-section h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .cta-section p {
+            margin-bottom: 1.5rem;
+            color: var(--medium-gray);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-pink), var(--accent-pink));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--accent-pink), var(--deep-pink));
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .service-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .service-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .service-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-pink), var(--accent-pink));
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .service-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .service-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="service-container">
+        <a href="../index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Torna al Portfolio
+        </a>
+
+        <div class="service-header">
+            <div class="service-icon">
+                <i class="fas fa-camera-retro"></i>
+            </div>
+            <h1 class="service-title">Content Creation</h1>
+            <p class="service-subtitle">
+                Creo contenuti visivi accattivanti e coinvolgenti che fermano lo scroll e generano
+                interazioni autentiche con il tuo pubblico.
+            </p>
+        </div>
+
+        <div class="service-section">
+            <h3><i class="fas fa-check-circle"></i> Cosa Include</h3>
+            <ul class="includes-list">
+                <li>
+                    <i class="fas fa-image"></i>
+                    <div>
+                        <strong>Grafiche Professionali</strong>
+                        <p>Design personalizzati per feed Instagram, post Facebook e immagini promozionali che rispecchiano la tua brand identity.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-video"></i>
+                    <div>
+                        <strong>Reel & Video Editing</strong>
+                        <p>Montaggio video professionale, effetti trendy, musica coinvolgente e testi animati per Reel e TikTok virali.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-mobile-alt"></i>
+                    <div>
+                        <strong>Stories Creative</strong>
+                        <p>Template personalizzati, sticker animati, sondaggi interattivi e contenuti dinamici per Stories Instagram.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-pen-fancy"></i>
+                    <div>
+                        <strong>Copywriting Strategico</strong>
+                        <p>Caption coinvolgenti, call-to-action efficaci e storytelling persuasivo per massimizzare engagement e conversioni.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="service-section">
+            <h3><i class="fas fa-star"></i> Benefici</h3>
+            <ul class="benefits-list">
+                <li>
+                    <i class="fas fa-eye"></i>
+                    <div>
+                        <strong>Cattura l'Attenzione</strong>
+                        <p>Contenuti studiati per fermare lo scroll e generare curiosità nel feed affollato dei social media.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-heart"></i>
+                    <div>
+                        <strong>Engagement Autentico</strong>
+                        <p>Contenuti che stimolano commenti, condivisioni e interazioni genuine con la tua community.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-palette"></i>
+                    <div>
+                        <strong>Brand Riconoscibile</strong>
+                        <p>Stile visivo coerente che rende il tuo brand immediatamente identificabile e memorabile.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-chart-area"></i>
+                    <div>
+                        <strong>Performance Ottimizzate</strong>
+                        <p>Contenuti progettati secondo le best practice degli algoritmi social per massimizzare reach e visibilità.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="service-section">
+            <h3><i class="fas fa-lightbulb"></i> Esempi Pratici</h3>
+            <div class="examples">
+                <p>
+                    <strong>Caso Studio - Beauty Brand:</strong> Ho creato una serie di Reel tutorial per un brand
+                    di cosmetici naturali, ottenendo in media 150K visualizzazioni per video e un aumento del 45%
+                    nelle vendite dirette da Instagram. I contenuti combinavano tips di makeup, behind-the-scenes
+                    e mini-tutorial facili da replicare.
+                </p>
+                <p>
+                    <strong>Caso Studio - Wellness Coach:</strong> Per una professionista del settore benessere ho
+                    sviluppato un piano di contenuti visual con grafiche motivazionali, infografiche educative e
+                    quote ispirational. Risultato: engagement rate costante sopra il 10% e crescita organica di
+                    8K follower in 3 mesi.
+                </p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Vuoi Contenuti che Convertono?</h3>
+            <p>Parliamo del tuo progetto e creiamo insieme una content strategy vincente.</p>
+            <a href="../index.html#contact" class="cta-button">
+                <i class="fas fa-paper-plane"></i>
+                Richiedi Informazioni
+            </a>
+        </div>
+    </div>
+</body>
+</html>

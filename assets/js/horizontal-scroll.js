@@ -37,6 +37,9 @@ class HorizontalScroll {
 
         // Initialize form
         this.initForm();
+
+        // Initialize Instagram buttons
+        this.initInstagramButtons();
     }
 
     hidePreloader() {
@@ -394,6 +397,27 @@ class HorizontalScroll {
                 notification.remove();
             }, 500);
         }, 4000);
+    }
+
+    // ===== INSTAGRAM BUTTONS =====
+    initInstagramButtons() {
+        const scriviBtn = document.getElementById('ig-scrivi-btn');
+        const seguiBtn = document.getElementById('ig-segui-btn');
+
+        if (scriviBtn) {
+            scriviBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Navigate to contact section (section 6)
+                this.goToSection(6);
+            });
+        }
+
+        if (seguiBtn) {
+            seguiBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // No action for now, button remains visually active
+            });
+        }
     }
 }
 

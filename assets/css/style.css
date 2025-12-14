@@ -1242,13 +1242,10 @@ p {
     right: 2rem;
   }
 
-  .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .profile-image {
-    margin: 0 auto;
+  /* Device Frame Tablet Responsive */
+  .device-frame {
+    height: 75vh;
+    max-height: 700px;
   }
 
   .stats-grid {
@@ -1317,6 +1314,69 @@ p {
     padding: 0.8rem 1.2rem;
   }
 
+  /* Mobile - Device Frame Full Screen */
+  #about {
+    padding: 1rem;
+  }
+
+  .device-frame {
+    height: 90vh;
+    max-height: none;
+    width: 100%;
+    max-width: 420px;
+    border-width: 12px;
+    border-radius: 35px;
+  }
+
+  .device-bezel {
+    top: -12px;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+    border-radius: 35px;
+  }
+
+  .device-camera {
+    top: 8px;
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Instagram Interface Mobile Adjustments */
+  .instagram-header {
+    padding: 12px;
+  }
+
+  .ig-profile-pic {
+    width: 77px;
+    height: 77px;
+  }
+
+  .ig-stat-number {
+    font-size: 14px;
+  }
+
+  .ig-stat-label {
+    font-size: 12px;
+  }
+
+  .ig-bio {
+    margin-bottom: 12px;
+  }
+
+  .ig-story-ring {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ig-story-label {
+    font-size: 11px;
+  }
+
+  .ig-story-img i {
+    font-size: 20px;
+  }
+
   .services-grid,
   .portfolio-grid {
     grid-template-columns: 1fr;
@@ -1338,13 +1398,6 @@ p {
 
   .stat-card {
     padding: 1.2rem 0.8rem;
-  }
-
-  .about-badge {
-    bottom: 5%;
-    right: 5%;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.8rem;
   }
 
   .skills-container {
@@ -1383,17 +1436,18 @@ p {
 }
 
 
-/* ===== DEVICE FRAME - TABLET MOCKUP ===== */
+/* ===== DEVICE FRAME - SMARTPHONE MOCKUP (9:16 PORTRAIT) ===== */
 
 /* Device Frame Container */
 .device-frame {
   position: relative;
-  width: 95vw;
-  max-width: 1400px;
-  aspect-ratio: 16 / 10;
+  width: auto;
+  height: 85vh;
+  max-height: 800px;
+  aspect-ratio: 9 / 16;
   background: transparent;
-  border: 35px solid #1c1c1e;
-  border-radius: 35px;
+  border: 18px solid #1c1c1e;
+  border-radius: 45px;
   box-shadow:
     0 25px 80px rgba(0, 0, 0, 0.3),
     0 10px 30px rgba(0, 0, 0, 0.22),
@@ -1414,26 +1468,26 @@ p {
   }
 }
 
-/* Tablet Bezel/Border */
+/* Smartphone Bezel/Border */
 .device-bezel {
   position: absolute;
-  top: -35px;
-  left: -35px;
-  width: calc(100% + 70px);
-  height: calc(100% + 70px);
-  border-radius: 35px;
+  top: -18px;
+  left: -18px;
+  width: calc(100% + 36px);
+  height: calc(100% + 36px);
+  border-radius: 45px;
   pointer-events: none;
   z-index: 10;
 }
 
-/* Front Camera */
+/* Front Camera & Notch */
 .device-camera {
   position: absolute;
-  top: 15px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: radial-gradient(circle at 30% 30%, #4a5568, #1a202c);
   border-radius: 50%;
   box-shadow:
@@ -1452,20 +1506,303 @@ p {
   border-radius: 50%;
 }
 
-/* Device Screen */
+/* Device Screen - Instagram Style */
 .device-screen {
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(232, 233, 237, 0.95) 0%, rgba(245, 245, 247, 0.95) 100%);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #ffffff;
   border-radius: 30px;
-  box-shadow: var(--shadow-medium);
-  padding: 4rem;
-  transition: var(--transition-smooth);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== INSTAGRAM MOCKUP INTERFACE ===== */
+
+/* Instagram Header */
+.instagram-header {
+  padding: 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.ig-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ig-username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ig-verified {
+  width: 14px;
+  height: 14px;
+  color: #0095f6;
+}
+
+.ig-menu-icon {
+  font-size: 20px;
+  color: #262626;
+  cursor: pointer;
+}
+
+/* Profile Section */
+.ig-profile-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.ig-profile-pic {
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+}
+
+.ig-profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dbdbdb;
+}
+
+/* Stats */
+.ig-stats {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.ig-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.ig-stat-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.ig-stat-label {
+  font-size: 13px;
+  color: #8e8e8e;
+  font-weight: 400;
+}
+
+/* Bio */
+.ig-bio {
+  margin-bottom: 14px;
+}
+
+.ig-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 4px;
+}
+
+.ig-bio-text {
+  font-size: 14px;
+  color: #262626;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+/* Action Buttons */
+.ig-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ig-btn {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-primary);
+}
+
+.ig-btn-primary {
+  background: #0095f6;
+  color: white;
+}
+
+.ig-btn-primary:hover {
+  background: #1877f2;
+}
+
+.ig-btn-secondary {
+  background: #efefef;
+  color: #262626;
+  border: 1px solid #dbdbdb;
+}
+
+.ig-btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+/* Stories Section */
+.ig-stories-section {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.ig-stories-container {
+  display: flex;
+  gap: 14px;
+}
+
+.ig-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 64px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ig-story:hover {
+  opacity: 0.8;
+}
+
+.ig-story-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ig-story-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ig-story-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-pink), var(--accent-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ig-story-img i {
+  font-size: 24px;
+  color: white;
+}
+
+.ig-story-label {
+  font-size: 12px;
+  color: #262626;
+  font-weight: 400;
+  max-width: 64px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Posts Grid Tabs */
+.ig-tabs {
+  display: flex;
+  border-bottom: 1px solid #dbdbdb;
+  background: #ffffff;
+}
+
+.ig-tab {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  color: #8e8e8e;
+  font-size: 24px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.ig-tab.active {
+  color: #262626;
+  border-bottom: 1px solid #262626;
+}
+
+/* Posts Grid */
+.ig-posts-grid {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.ig-post-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.ig-post-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ig-post-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Custom Scrollbar for Instagram */
+.ig-stories-section::-webkit-scrollbar,
+.ig-posts-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.ig-stories-section,
+.ig-posts-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Animated Background Decorations - Global */
