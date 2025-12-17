@@ -276,10 +276,20 @@
 </head>
 <body>
     <div class="service-container">
-        <a href="../index.html" class="back-button">
+        <a href="../index.html" class="back-button" id="back-button">
             <i class="fas fa-arrow-left"></i>
             Torna al Portfolio
         </a>
+
+        <script>
+            // Legge il parametro "from" dall'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const fromSection = urlParams.get('from') || '0';
+
+            // Aggiorna il link del pulsante per tornare alla sezione corretta
+            const backButton = document.getElementById('back-button');
+            backButton.href = `../index.html?section=${fromSection}`;
+        </script>
 
         <div class="service-header">
             <div class="service-icon">

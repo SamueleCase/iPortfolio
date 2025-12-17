@@ -1240,6 +1240,9 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: var(--transition-smooth);
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .service-card:hover {

@@ -17,6 +17,9 @@ class HorizontalScroll {
         // Hide preloader
         this.hidePreloader();
 
+        // Check for section parameter in URL
+        this.checkURLSection();
+
         // Initialize typing effect
         this.initTypingEffect();
 
@@ -43,6 +46,21 @@ class HorizontalScroll {
 
         // Initialize hero highlights navigation
         this.initHeroHighlights();
+    }
+
+    checkURLSection() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionParam = urlParams.get('section');
+
+        if (sectionParam !== null) {
+            const sectionIndex = parseInt(sectionParam);
+            if (!isNaN(sectionIndex) && sectionIndex >= 0 && sectionIndex < this.totalSections) {
+                // Navigate to the section after page load
+                setTimeout(() => {
+                    this.goToSection(sectionIndex);
+                }, 600); // Small delay to ensure smooth transition
+            }
+        }
     }
 
     hidePreloader() {
