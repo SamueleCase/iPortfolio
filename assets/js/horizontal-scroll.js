@@ -65,12 +65,23 @@ class HorizontalScroll {
 
     hidePreloader() {
         window.addEventListener('load', () => {
-            const preloader = document.querySelector('.preloader');
+            const preloader = document.querySelector('.preloader-giuliis');
             if (preloader) {
-                preloader.classList.add('fade-out');
+                // Attendi 1 secondo prima di iniziare l'animazione di uscita
                 setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
+                    // Fase 1: Scomparsa sezione centrale
+                    preloader.classList.add('preloader-exit');
+
+                    // Fase 2: Dopo 1.5s rimuovi completamente il preloader
+                    setTimeout(() => {
+                        preloader.classList.add('preloader-hidden');
+
+                        // Rimuovi dal DOM dopo la transizione
+                        setTimeout(() => {
+                            preloader.style.display = 'none';
+                        }, 500);
+                    }, 1500);
+                }, 1000);
             }
         });
     }
