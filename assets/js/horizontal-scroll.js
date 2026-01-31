@@ -49,6 +49,11 @@ class HorizontalScroll {
 
         // Initialize hero CTA
         this.initHeroCTA();
+
+        // Initialize interactive elements
+        this.initStatCounters();
+        this.initSkillBars();
+        this.initPostHeartAnimation();
     }
 
     checkURLSection() {
@@ -289,11 +294,23 @@ class HorizontalScroll {
         // Update navigation dots
         this.updateNavDots();
 
+        // Trigger section-specific animations after transition starts
+        setTimeout(() => this.onSectionEnter(newSection), 300);
+
         // Reset scrolling flag after transition
         clearTimeout(this.scrollTimeout);
         this.scrollTimeout = setTimeout(() => {
             this.isScrolling = false;
         }, 800); // Match CSS transition duration
+    }
+
+    onSectionEnter(sectionIndex) {
+        if (sectionIndex === 1) {
+            this.animateCounters();
+        }
+        if (sectionIndex === 4) {
+            this.animateSkillBars();
+        }
     }
 
     updateNavDots() {
@@ -609,9 +626,180 @@ class HorizontalScroll {
         if (seguiBtn) {
             seguiBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                // No action for now, button remains visually active
+                const isFollowing = seguiBtn.classList.contains('ig-following');
+
+                if (!isFollowing) {
+                    seguiBtn.classList.add('ig-following');
+                    seguiBtn.innerHTML = '<i class="fas fa-check" style="margin-right:4px"></i> Segui già';
+                    this.createConfetti(seguiBtn);
+
+                    // Bump follower count to 100K
+                    const followerEl = document.querySelectorAll('.ig-stat-number')[1];
+                    if (followerEl) followerEl.textContent = '100K';
+                } else {
+                    seguiBtn.classList.remove('ig-following');
+                    seguiBtn.textContent = 'Segui';
+
+                    const followerEl = document.querySelectorAll('.ig-stat-number')[1];
+                    if (followerEl) followerEl.textContent = '99.999K';
+                }
             });
         }
+    }
+
+    // ===== CONFETTI BURST =====
+    createConfetti(sourceEl) {
+        const rect = sourceEl.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const colors = ['#d19ca1', '#c28489', '#ff6b81', '#ff4757', '#ffa502', '#ff6348', '#eccc68', '#7bed9f', '#ff9ff3', '#f368e0'];
+        const particleCount = 35;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'confetti-particle';
+
+            const angle = (Math.PI * 2 * i) / particleCount + (Math.random() - 0.5) * 0.5;
+            const velocity = 80 + Math.random() * 180;
+            const tx = Math.cos(angle) * velocity;
+            const ty = Math.sin(angle) * velocity - 60;
+
+            particle.style.cssText = `
+                left: ${centerX}px;
+                top: ${centerY}px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                --tx: ${tx}px;
+                --ty: ${ty}px;
+                --r: ${Math.random() * 720 - 360}deg;
+                animation-delay: ${Math.random() * 0.08}s;
+                width: ${4 + Math.random() * 6}px;
+                height: ${4 + Math.random() * 6}px;
+                border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+            `;
+
+            document.body.appendChild(particle);
+            particle.addEventListener('animationend', () => particle.remove());
+        }
+    }
+
+    // ===== STAT COUNTER ANIMATION =====
+    initStatCounters() {
+        this.statNumbers = document.querySelectorAll('.ig-stat-number');
+        this.statTargets = [];
+
+        this.statNumbers.forEach(el => {
+            const text = el.textContent.trim();
+            let value, suffix = '', decimals = 0;
+
+            if (text.includes('K')) {
+                suffix = 'K';
+                value = parseFloat(text.replace('K', ''));
+                const parts = text.replace('K', '').split('.');
+                decimals = parts.length > 1 ? parts[1].length : 0;
+            } else if (text.includes('M')) {
+                suffix = 'M';
+                value = parseFloat(text.replace('M', ''));
+                const parts = text.replace('M', '').split('.');
+                decimals = parts.length > 1 ? parts[1].length : 0;
+            } else {
+                value = parseInt(text);
+                decimals = 0;
+            }
+
+            this.statTargets.push({ el, value, suffix, decimals, originalText: text });
+        });
+    }
+
+    animateCounters() {
+        if (!this.statTargets || this.statTargets.length === 0) return;
+
+        const duration = 2000;
+        const startTime = performance.now();
+
+        // Reset all to 0
+        this.statTargets.forEach(t => {
+            t.el.textContent = '0';
+        });
+
+        const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+
+        const animate = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutQuart(progress);
+
+            this.statTargets.forEach(({ el, value, suffix, decimals }) => {
+                const current = eased * value;
+                const formatted = decimals > 0
+                    ? current.toFixed(decimals)
+                    : Math.round(current).toString();
+                el.textContent = formatted + suffix;
+            });
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        };
+
+        requestAnimationFrame(animate);
+    }
+
+    // ===== SKILL BARS ANIMATION =====
+    initSkillBars() {
+        this.skillBars = document.querySelectorAll('.skill-bar');
+
+        this.skillBars.forEach(bar => {
+            bar.dataset.target = bar.style.width;
+            bar.style.width = '0%';
+        });
+    }
+
+    animateSkillBars() {
+        if (!this.skillBars) return;
+
+        this.skillBars.forEach((bar, i) => {
+            setTimeout(() => {
+                bar.style.width = bar.dataset.target;
+            }, i * 80);
+        });
+    }
+
+    // ===== POST HEART ANIMATION =====
+    initPostHeartAnimation() {
+        const posts = document.querySelectorAll('.ig-post-item');
+
+        posts.forEach(post => {
+            let lastTap = 0;
+
+            // Double-click (desktop)
+            post.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                this.showHeartAnimation(post);
+            });
+
+            // Double-tap (mobile)
+            post.addEventListener('touchend', (e) => {
+                const now = Date.now();
+                if (now - lastTap < 300) {
+                    e.preventDefault();
+                    this.showHeartAnimation(post);
+                }
+                lastTap = now;
+            });
+        });
+    }
+
+    showHeartAnimation(post) {
+        // Avoid stacking
+        if (post.querySelector('.ig-heart-animation')) return;
+
+        const heart = document.createElement('div');
+        heart.className = 'ig-heart-animation';
+        heart.innerHTML = '<i class="fas fa-heart"></i>';
+
+        post.appendChild(heart);
+        heart.addEventListener('animationend', () => heart.remove());
     }
 
     // ===== HERO CTA =====

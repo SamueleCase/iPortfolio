@@ -1415,8 +1415,80 @@ p {
   height: 100%;
   background: linear-gradient(90deg, var(--primary-pink), var(--accent-pink));
   border-radius: 10px;
-  transition: width 1s ease-out;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 0 10px rgba(209, 156, 161, 0.5);
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+
+/* Confetti Particles */
+.confetti-particle {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  animation: confettiBurst 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes confettiBurst {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Segui Button - Following State */
+.ig-btn.ig-following {
+  background: #efefef;
+  color: var(--dark-gray);
+  border: none;
+}
+
+/* Heart Animation on Double-Tap */
+.ig-heart-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 10;
+  pointer-events: none;
+  animation: heartBurst 0.9s ease-out forwards;
+}
+
+.ig-heart-animation i {
+  font-size: 50px;
+  color: #ff3040;
+  filter: drop-shadow(0 2px 10px rgba(255, 48, 64, 0.5));
+}
+
+@keyframes heartBurst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.9;
+  }
+  15% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
 }
 
 /* ===== SECTION 6: TESTIMONIANZE ===== */
