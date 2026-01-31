@@ -357,17 +357,42 @@ class HorizontalScroll {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            // Get submit button
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso...';
+
             // Get form data
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
 
-            console.log('Form submitted:', data);
-
-            // Show success message
-            this.showFormSuccess();
-
-            // Reset form
-            contactForm.reset();
+            // Send email using EmailJS
+            // NOTA: Sostituisci 'YOUR_SERVICE_ID' e 'YOUR_TEMPLATE_ID' con i tuoi ID da emailjs.com
+            // Configurazione: https://dashboard.emailjs.com/admin
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                from_name: data.name,
+                from_email: data.email,
+                message: data.message,
+                to_email: 'giuliis.fa.marketing@gmail.com'
+            })
+            .then(() => {
+                // Success
+                this.showFormSuccess();
+                contactForm.reset();
+            })
+            .catch((error) => {
+                // Error
+                console.error('EmailJS Error:', error);
+                this.showFormError();
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            });
         });
     }
 
@@ -429,6 +454,40 @@ class HorizontalScroll {
                 notification.remove();
             }, 500);
         }, 4000);
+    }
+
+    showFormError() {
+        // Create error notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 35px rgba(231, 76, 60, 0.3);
+            z-index: 10000;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            animation: slideIn 0.5s ease;
+        `;
+        notification.innerHTML = `
+            <i class="fas fa-exclamation-circle" style="margin-right: 0.75rem;"></i>
+            Errore nell'invio. Riprova o contattami direttamente.
+        `;
+
+        // Append to body
+        document.body.appendChild(notification);
+
+        // Remove after 5 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.5s ease';
+            setTimeout(() => {
+                notification.remove();
+            }, 500);
+        }, 5000);
     }
 
     // ===== INSTAGRAM BUTTONS =====
