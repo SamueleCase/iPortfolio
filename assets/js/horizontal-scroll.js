@@ -47,8 +47,8 @@ class HorizontalScroll {
         // Initialize Instagram buttons
         this.initInstagramButtons();
 
-        // Initialize hero highlights navigation
-        this.initHeroHighlights();
+        // Initialize hero CTA
+        this.initHeroCTA();
     }
 
     checkURLSection() {
@@ -614,15 +614,15 @@ class HorizontalScroll {
         }
     }
 
-    // ===== HERO HIGHLIGHTS NAVIGATION =====
-    initHeroHighlights() {
-        const highlights = document.querySelectorAll('.hero-highlight');
-        highlights.forEach(highlight => {
-            highlight.addEventListener('click', (e) => {
-                e.preventDefault();
-                const section = parseInt(highlight.getAttribute('data-section'));
-                this.goToSection(section);
-            });
+    // ===== HERO CTA =====
+    initHeroCTA() {
+        const cta = document.querySelector('.hero-cta');
+        if (!cta) return;
+
+        cta.addEventListener('click', (e) => {
+            e.preventDefault();
+            const section = parseInt(cta.getAttribute('data-section'));
+            this.goToSection(section);
         });
     }
 }
