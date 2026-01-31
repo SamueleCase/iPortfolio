@@ -6,6 +6,9 @@ class HorizontalScroll {
         this.totalSections = 7;
         this.isScrolling = false;
         this.scrollTimeout = null;
+        this.accumulatedDelta = 0;
+        this.boundaryThreshold = 80;
+        this.boundaryResetTimeout = null;
 
         this.wrapper = document.querySelector('.horizontal-wrapper');
         this.navDots = document.querySelectorAll('.nav-dot');
@@ -134,31 +137,83 @@ class HorizontalScroll {
     }
 
     bindScrollEvents() {
-        // Mouse wheel event
+        // Mouse wheel / trackpad event
         window.addEventListener('wheel', (e) => {
             if (this.isScrolling) return;
 
+            const scrollableEl = this.getScrollableAncestor(e.target);
+
+            // If inside a scrollable element that can still scroll, let it
+            if (scrollableEl && this.canElementScroll(scrollableEl, e.deltaY, e.deltaX)) {
+                this.accumulatedDelta = 0;
+                return;
+            }
+
+            // Prevent default (no scrollable target, or at boundary)
             e.preventDefault();
 
+            // If at boundary of a scrollable element, require accumulated delta
+            if (scrollableEl) {
+                this.accumulatedDelta += Math.abs(e.deltaY);
+
+                clearTimeout(this.boundaryResetTimeout);
+                this.boundaryResetTimeout = setTimeout(() => {
+                    this.accumulatedDelta = 0;
+                }, 300);
+
+                if (this.accumulatedDelta < this.boundaryThreshold) {
+                    return;
+                }
+                this.accumulatedDelta = 0;
+            }
+
             if (e.deltaY > 0) {
-                // Scroll down → move right
                 this.goToSection(this.currentSection + 1);
-            } else {
-                // Scroll up → move left
+            } else if (e.deltaY < 0) {
                 this.goToSection(this.currentSection - 1);
             }
         }, { passive: false });
 
-        // Touch events for mobile swipe (basic implementation)
+        // Touch events for mobile swipe
         let touchStartX = 0;
-        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchScrollableEl = null;
+        let touchInitialScrollTop = 0;
+        let touchInitialScrollLeft = 0;
 
         window.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+            touchScrollableEl = this.getScrollableAncestor(e.target);
+            if (touchScrollableEl) {
+                touchInitialScrollTop = touchScrollableEl.scrollTop;
+                touchInitialScrollLeft = touchScrollableEl.scrollLeft;
+            }
         }, { passive: true });
 
         window.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
+            if (this.isScrolling) return;
+
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+
+            if (touchScrollableEl) {
+                const scrolledV = Math.abs(touchScrollableEl.scrollTop - touchInitialScrollTop) > 2;
+                const scrolledH = Math.abs(touchScrollableEl.scrollLeft - touchInitialScrollLeft) > 2;
+
+                // If the element consumed the scroll gesture, don't navigate
+                if (scrolledV || scrolledH) {
+                    return;
+                }
+
+                // Element didn't scroll (at boundary) - only navigate on horizontal swipe
+                const diffX = Math.abs(touchStartX - touchEndX);
+                const diffY = Math.abs(touchStartY - touchEndY);
+                if (diffY > diffX) {
+                    return;
+                }
+            }
+
             this.handleSwipe(touchStartX, touchEndX);
         }, { passive: true });
     }
@@ -249,6 +304,54 @@ class HorizontalScroll {
                 dot.classList.remove('active');
             }
         });
+    }
+
+    // ===== SCROLL BOUNDARY DETECTION =====
+    getScrollableAncestor(element) {
+        let current = element;
+        while (current && current !== document.body && current !== document.documentElement) {
+            const style = window.getComputedStyle(current);
+            const overflowY = style.overflowY;
+            const overflowX = style.overflowX;
+
+            const isScrollableY = (overflowY === 'auto' || overflowY === 'scroll') &&
+                                  current.scrollHeight > current.clientHeight;
+            const isScrollableX = (overflowX === 'auto' || overflowX === 'scroll') &&
+                                  current.scrollWidth > current.clientWidth;
+
+            if (isScrollableY || isScrollableX) {
+                return current;
+            }
+            current = current.parentElement;
+        }
+        return null;
+    }
+
+    canElementScroll(element, deltaY, deltaX) {
+        const style = window.getComputedStyle(element);
+
+        // Check vertical scrollability
+        const overflowY = style.overflowY;
+        if ((overflowY === 'auto' || overflowY === 'scroll') && element.scrollHeight > element.clientHeight) {
+            const atTop = element.scrollTop <= 0;
+            const atBottom = element.scrollTop + element.clientHeight >= element.scrollHeight - 1;
+
+            if (deltaY > 0 && !atBottom) return true;
+            if (deltaY < 0 && !atTop) return true;
+        }
+
+        // Check horizontal scrollability
+        const overflowX = style.overflowX;
+        if ((overflowX === 'auto' || overflowX === 'scroll') && element.scrollWidth > element.clientWidth) {
+            const atLeft = element.scrollLeft <= 0;
+            const atRight = element.scrollLeft + element.clientWidth >= element.scrollWidth - 1;
+
+            const hDelta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY;
+            if (hDelta > 0 && !atRight) return true;
+            if (hDelta < 0 && !atLeft) return true;
+        }
+
+        return false;
     }
 
     // ===== PORTFOLIO FILTERS =====
