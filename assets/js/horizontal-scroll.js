@@ -47,13 +47,15 @@ class HorizontalScroll {
         // Initialize Instagram buttons
         this.initInstagramButtons();
 
+        // Load Instagram posts dynamically
+        this.loadInstagramPosts();
+
         // Initialize hero CTA
         this.initHeroCTA();
 
         // Initialize interactive elements
         this.initStatCounters();
         this.initSkillBars();
-        this.initPostHeartAnimation();
     }
 
     checkURLSection() {
@@ -765,24 +767,120 @@ class HorizontalScroll {
         });
     }
 
-    // ===== POST HEART ANIMATION =====
+    // ===== DYNAMIC INSTAGRAM POSTS LOADER =====
+    // To add new posts: append entries to this array.
+    // Supported types: 'image' (jpg, png, webp, gif) and 'video' (mp4, webm, mov).
+    static POSTS = [
+        { src: 'assets/img/post/post-01.jpg',  alt: 'Post Instagram - Natale',           type: 'image' },
+        { src: 'assets/img/post/post-02.png',  alt: 'Grafica social - 3A Spaghetti',     type: 'image' },
+        { src: 'assets/img/post/post-03.png',  alt: 'Post social - 3A',                  type: 'image' },
+        { src: 'assets/img/post/post-04.jpg',  alt: 'Preview progetto - Filet',           type: 'image' },
+        { src: 'assets/img/post/post-05.png',  alt: 'Post Natale - Genius',               type: 'image' },
+        { src: 'assets/img/post/post-06.png',  alt: 'Preview progetto - 3A',              type: 'image' },
+        { src: 'assets/img/post/post-07.png',  alt: 'Grafica social - Ambress',           type: 'image' },
+        { src: 'assets/img/post/post-08.png',  alt: 'Grafica social - Ambress',           type: 'image' },
+        { src: 'assets/img/post/post-09.jpg',  alt: 'Carosello - ZOE Acido',              type: 'image' },
+        { src: 'assets/img/post/post-10.jpg',  alt: 'Carosello - ZOE Betaglucano',        type: 'image' },
+        { src: 'assets/img/post/post-11.png',  alt: 'Grafica social - Fioreria',          type: 'image' },
+        { src: 'assets/img/post/post-12.png',  alt: 'Logo - Fashion Brand',               type: 'image' },
+        { src: 'assets/img/post/post-13.png',  alt: 'Food photography - 3A',              type: 'image' },
+        { src: 'assets/img/post/post-14.png',  alt: 'Post social - 3A Vino',              type: 'image' },
+        { src: 'assets/img/post/post-15.png',  alt: 'Food photography - 3A Piatto',       type: 'image' },
+        { src: 'assets/img/post/post-16.png',  alt: 'Post social - 3A Telefono',          type: 'image' },
+    ];
+
+    loadInstagramPosts() {
+        const grid = document.getElementById('ig-dynamic-grid');
+        if (!grid) return;
+
+        const fragment = document.createDocumentFragment();
+        const videoExtensions = ['mp4', 'webm', 'mov'];
+
+        HorizontalScroll.POSTS.forEach(post => {
+            const item = document.createElement('div');
+            item.className = 'ig-post-item';
+
+            const ext = post.src.split('.').pop().toLowerCase();
+            const isVideo = post.type === 'video' || videoExtensions.includes(ext);
+
+            if (isVideo) {
+                const video = document.createElement('video');
+                video.src = post.src;
+                video.alt = post.alt;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.preload = 'metadata';
+                video.setAttribute('loading', 'lazy');
+
+                // Play on hover
+                item.addEventListener('mouseenter', () => video.play());
+                item.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+
+                // Play icon overlay
+                const playIcon = document.createElement('div');
+                playIcon.className = 'ig-video-icon';
+                playIcon.innerHTML = '<i class="fas fa-play"></i>';
+
+                item.appendChild(video);
+                item.appendChild(playIcon);
+                item.classList.add('ig-post-video');
+            } else {
+                const img = document.createElement('img');
+                img.src = post.src;
+                img.alt = post.alt;
+                img.loading = 'lazy';
+                item.appendChild(img);
+            }
+
+            fragment.appendChild(item);
+        });
+
+        grid.appendChild(fragment);
+
+        // Update post count in stats
+        const postCountEl = document.querySelector('.ig-stat-number');
+        if (postCountEl) {
+            postCountEl.textContent = HorizontalScroll.POSTS.length.toString();
+        }
+
+        // Initialize heart animation on the newly created posts
+        this.initPostHeartAnimation();
+    }
+
+    // ===== POST INTERACTIONS (click → lightbox, double-click → heart) =====
     initPostHeartAnimation() {
         const posts = document.querySelectorAll('.ig-post-item');
 
-        posts.forEach(post => {
+        posts.forEach((post, index) => {
+            let clickTimer = null;
             let lastTap = 0;
 
-            // Double-click (desktop)
+            // Single click → open lightbox (delayed to distinguish from dblclick)
+            post.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (clickTimer) return;
+                clickTimer = setTimeout(() => {
+                    clickTimer = null;
+                    this.openLightbox(index);
+                }, 250);
+            });
+
+            // Double-click → heart (cancel lightbox)
             post.addEventListener('dblclick', (e) => {
                 e.preventDefault();
+                clearTimeout(clickTimer);
+                clickTimer = null;
                 this.showHeartAnimation(post);
             });
 
-            // Double-tap (mobile)
+            // Mobile: single tap → lightbox, double tap → heart
             post.addEventListener('touchend', (e) => {
                 const now = Date.now();
                 if (now - lastTap < 300) {
                     e.preventDefault();
+                    clearTimeout(clickTimer);
+                    clickTimer = null;
                     this.showHeartAnimation(post);
                 }
                 lastTap = now;
@@ -791,15 +889,187 @@ class HorizontalScroll {
     }
 
     showHeartAnimation(post) {
-        // Avoid stacking
         if (post.querySelector('.ig-heart-animation')) return;
-
         const heart = document.createElement('div');
         heart.className = 'ig-heart-animation';
         heart.innerHTML = '<i class="fas fa-heart"></i>';
-
         post.appendChild(heart);
         heart.addEventListener('animationend', () => heart.remove());
+    }
+
+    // ===== POST LIGHTBOX WITH 3D CARD TRANSITIONS =====
+    openLightbox(index) {
+        this.lightboxIndex = index;
+        this.lightboxOpen = true;
+
+        // Build lightbox DOM if not already present
+        if (!this.lightboxEl) {
+            this.buildLightbox();
+        }
+
+        this.updateLightboxMedia(index, 'none');
+        this.lightboxEl.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Entrance animation
+        requestAnimationFrame(() => {
+            this.lightboxEl.querySelector('.plb-card').classList.add('plb-card-enter');
+        });
+    }
+
+    buildLightbox() {
+        const el = document.createElement('div');
+        el.className = 'post-lightbox';
+        el.innerHTML = `
+            <div class="plb-backdrop"></div>
+            <div class="plb-content">
+                <button class="plb-close" aria-label="Chiudi"><i class="fas fa-times"></i></button>
+                <button class="plb-nav plb-prev" aria-label="Precedente"><i class="fas fa-chevron-left"></i></button>
+                <button class="plb-nav plb-next" aria-label="Successivo"><i class="fas fa-chevron-right"></i></button>
+                <div class="plb-card-wrapper">
+                    <div class="plb-card"></div>
+                </div>
+                <div class="plb-counter"></div>
+                <div class="plb-dots"></div>
+            </div>
+        `;
+        document.body.appendChild(el);
+        this.lightboxEl = el;
+
+        // Build dots
+        const dotsContainer = el.querySelector('.plb-dots');
+        HorizontalScroll.POSTS.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'plb-dot';
+            dot.addEventListener('click', () => this.goToLightbox(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        // Event listeners
+        el.querySelector('.plb-close').addEventListener('click', () => this.closeLightbox());
+        el.querySelector('.plb-backdrop').addEventListener('click', () => this.closeLightbox());
+        el.querySelector('.plb-prev').addEventListener('click', () => this.prevLightbox());
+        el.querySelector('.plb-next').addEventListener('click', () => this.nextLightbox());
+
+        // Keyboard
+        this.lightboxKeyHandler = (e) => {
+            if (!this.lightboxOpen) return;
+            if (e.key === 'Escape') this.closeLightbox();
+            if (e.key === 'ArrowLeft') this.prevLightbox();
+            if (e.key === 'ArrowRight') this.nextLightbox();
+        };
+        document.addEventListener('keydown', this.lightboxKeyHandler);
+
+        // Swipe (mobile)
+        let touchStartX = 0;
+        const content = el.querySelector('.plb-content');
+        content.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        content.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? this.prevLightbox() : this.nextLightbox();
+            }
+        });
+    }
+
+    updateLightboxMedia(index, direction) {
+        const post = HorizontalScroll.POSTS[index];
+        const card = this.lightboxEl.querySelector('.plb-card');
+        const counter = this.lightboxEl.querySelector('.plb-counter');
+        const videoExts = ['mp4', 'webm', 'mov'];
+        const ext = post.src.split('.').pop().toLowerCase();
+        const isVideo = post.type === 'video' || videoExts.includes(ext);
+
+        // Set flip direction class
+        card.className = 'plb-card';
+        if (direction !== 'none') {
+            card.classList.add(direction === 'next' ? 'plb-flip-out-left' : 'plb-flip-out-right');
+
+            card.addEventListener('animationend', () => {
+                this.renderLightboxMedia(card, post, isVideo);
+                card.className = 'plb-card';
+                card.classList.add(direction === 'next' ? 'plb-flip-in-right' : 'plb-flip-in-left');
+            }, { once: true });
+        } else {
+            this.renderLightboxMedia(card, post, isVideo);
+        }
+
+        counter.textContent = `${index + 1} / ${HorizontalScroll.POSTS.length}`;
+
+        // Update dots
+        this.lightboxEl.querySelectorAll('.plb-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+
+        // Update nav visibility
+        this.lightboxEl.querySelector('.plb-prev').style.opacity = index === 0 ? '0.3' : '1';
+        this.lightboxEl.querySelector('.plb-next').style.opacity = index === HorizontalScroll.POSTS.length - 1 ? '0.3' : '1';
+    }
+
+    renderLightboxMedia(card, post, isVideo) {
+        // Pause any existing video
+        const oldVideo = card.querySelector('video');
+        if (oldVideo) oldVideo.pause();
+
+        card.innerHTML = '';
+
+        if (isVideo) {
+            const video = document.createElement('video');
+            video.src = post.src;
+            video.controls = true;
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            card.appendChild(video);
+        } else {
+            const img = document.createElement('img');
+            img.src = post.src;
+            img.alt = post.alt;
+            card.appendChild(img);
+        }
+    }
+
+    goToLightbox(index) {
+        if (index < 0 || index >= HorizontalScroll.POSTS.length || index === this.lightboxIndex) return;
+        const direction = index > this.lightboxIndex ? 'next' : 'prev';
+        this.lightboxIndex = index;
+        this.updateLightboxMedia(index, direction);
+    }
+
+    prevLightbox() {
+        if (this.lightboxIndex > 0) {
+            this.goToLightbox(this.lightboxIndex - 1);
+        }
+    }
+
+    nextLightbox() {
+        if (this.lightboxIndex < HorizontalScroll.POSTS.length - 1) {
+            this.goToLightbox(this.lightboxIndex + 1);
+        }
+    }
+
+    closeLightbox() {
+        if (!this.lightboxEl) return;
+        this.lightboxOpen = false;
+        const card = this.lightboxEl.querySelector('.plb-card');
+        card.classList.add('plb-card-exit');
+
+        // Pause any video
+        const video = card.querySelector('video');
+        if (video) video.pause();
+
+        this.lightboxEl.classList.add('closing');
+        const onClose = (e) => {
+            if (e.target !== this.lightboxEl) return;
+            this.lightboxEl.removeEventListener('animationend', onClose);
+            this.lightboxEl.classList.remove('active', 'closing');
+            card.classList.remove('plb-card-exit');
+            document.body.style.overflow = '';
+        };
+        this.lightboxEl.addEventListener('animationend', onClose);
     }
 
     // ===== HERO CTA =====
