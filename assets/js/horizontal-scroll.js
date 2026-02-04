@@ -103,9 +103,9 @@ class HorizontalScroll {
 
         const texts = [
             'Social Media Manager',
-            'Graphic Designer',
             'Content Creator',
-            'Brand Strategist'
+            'Brand Strategist',
+            'Graphic Designer'
         ];
 
         let textIndex = 0;
