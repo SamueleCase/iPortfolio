@@ -174,7 +174,7 @@ body {
 /* Horizontal Wrapper - Core Layout */
 .horizontal-wrapper {
   display: flex;
-  width: 700vw; /* 7 sections * 100vw */
+  width: calc(var(--total-sections, 7) * 100vw);
   height: 100vh;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
@@ -2173,6 +2173,7 @@ a.contact-item:hover {
     padding: 1.2rem 0.8rem;
   }
 
+  /* Skills responsive */
   .skills-container {
     grid-template-columns: 1fr;
     gap: 2rem;

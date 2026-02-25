@@ -3,7 +3,7 @@
 class HorizontalScroll {
     constructor() {
         this.currentSection = 0;
-        this.totalSections = 10;
+        this.totalSections = 7;
         this.isScrolling = false;
         this.scrollTimeout = null;
         this.accumulatedDelta = 0;
@@ -38,8 +38,7 @@ class HorizontalScroll {
         // Initialize portfolio filters
         // Portfolio filters removed — case study cards now link to detail pages
 
-        // Initialize testimonials
-        this.initTestimonials();
+        // Testimonials removed (section cut for CV portfolio)
 
         // Initialize Instagram buttons
         this.initInstagramButtons();
@@ -86,9 +85,9 @@ class HorizontalScroll {
                         // Rimuovi dal DOM dopo la transizione
                         setTimeout(() => {
                             preloader.style.display = 'none';
-                        }, 400);
-                    }, 1200);
-                }, 800);
+                        }, 300);
+                    }, 800);
+                }, 400);
             }
         });
     }
@@ -307,7 +306,7 @@ class HorizontalScroll {
         if (sectionIndex === 1) {
             this.animateCounters();
         }
-        if (sectionIndex === 5) {
+        if (sectionIndex === 4) {
             this.animateSkillBars();
         }
     }
@@ -429,8 +428,8 @@ class HorizontalScroll {
         if (scriviBtn) {
             scriviBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                // Navigate to contact section (section 9)
-                this.goToSection(9);
+                // Navigate to contact section (section 6)
+                this.goToSection(6);
             });
         }
 
@@ -446,13 +445,13 @@ class HorizontalScroll {
 
                     // Bump follower count to 100K
                     const followerEl = document.querySelectorAll('.ig-stat-number')[1];
-                    if (followerEl) followerEl.textContent = '100K';
+                    if (followerEl) followerEl.textContent = '2.801K';
                 } else {
                     seguiBtn.classList.remove('ig-following');
                     seguiBtn.textContent = 'Segui';
 
                     const followerEl = document.querySelectorAll('.ig-stat-number')[1];
-                    if (followerEl) followerEl.textContent = '99.999K';
+                    if (followerEl) followerEl.textContent = '2.8K';
                 }
             });
         }

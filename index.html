@@ -32,7 +32,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -139,7 +139,7 @@
     </div>
 
     <!-- Horizontal Wrapper -->
-    <div class="horizontal-wrapper" style="width: 1000vw;">
+    <div class="horizontal-wrapper" style="--total-sections: 7;">
 
         <!-- Section 1: Hero -->
         <section class="horizontal-section hero-section" id="hero" data-section="0">
@@ -149,10 +149,16 @@
                     <p class="hero-role">Social Media Manager & Graphic Designer</p>
                     <h2 class="hero-headline">Dal contenuto alla conversione, con strategia e creatività.</h2>
                     <p class="hero-description">Social Media Manager e Content Creator specializzata in crescita organica, brand identity e campagne data-driven. Trasformo obiettivi di comunicazione in risultati misurabili.</p>
-                    <a href="#about" class="btn btn-primary hero-cta" data-section="1">
-                        <span>Scopri chi sono</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#about" class="btn btn-primary hero-cta" data-section="1">
+                            <span>Scopri chi sono</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="assets/pdf/GIULIA FADLON CV.pdf" target="_blank" class="btn btn-primary" style="background: rgba(255,255,255,0.3); color: var(--dark-gray); border: 1px solid rgba(255,255,255,0.4); box-shadow: none;">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Scarica il CV</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <div class="hero-image-accent"></div>
@@ -201,7 +207,7 @@
                                 <span class="ig-stat-label">post</span>
                             </div>
                             <div class="ig-stat">
-                                <span class="ig-stat-number">99.999K</span>
+                                <span class="ig-stat-number">2.8K</span>
                                 <span class="ig-stat-label">follower</span>
                             </div>
                             <div class="ig-stat">
@@ -323,78 +329,13 @@
             </div>
         </section>
 
-        <!-- Section 3: Esperienza -->
-        <section class="horizontal-section" id="experience" data-section="2">
-            <div class="glass-container">
-                <h2 class="section-title">Esperienza Professionale</h2>
-                <p class="section-subtitle">Il mio percorso nel Social Media Marketing e nella comunicazione digitale</p>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Social Media Manager</h3>
-                                <span class="timeline-company">Digital Agency XYZ</span>
-                            </div>
-                            <span class="timeline-period">Gen 2023 — Presente</span>
-                            <p>Gestione di 8+ clienti nel settore fashion, food e lifestyle. Pianificazione editoriale, content creation, community management e reportistica mensile. Crescita media dei profili gestiti: +180%.</p>
-                            <div class="timeline-tags">
-                                <span>Content Strategy</span>
-                                <span>Community Management</span>
-                                <span>Meta Ads</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Content Creator & Social Media Specialist</h3>
-                                <span class="timeline-company">Studio Creativo ABC</span>
-                            </div>
-                            <span class="timeline-period">Mar 2021 — Dic 2022</span>
-                            <p>Ideazione e produzione di contenuti per brand emergenti. Shooting fotografici, video editing, copywriting e gestione campagne sponsorizzate su Meta e TikTok.</p>
-                            <div class="timeline-tags">
-                                <span>Content Creation</span>
-                                <span>Video Editing</span>
-                                <span>Shooting</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3>Social Media Intern</h3>
-                                <span class="timeline-company">Brand Fashion DEF</span>
-                            </div>
-                            <span class="timeline-period">Set 2020 — Feb 2021</span>
-                            <p>Supporto nella gestione dei canali social del brand. Creazione grafiche per stories e feed, monitoraggio KPI e analisi dei competitor.</p>
-                            <div class="timeline-tags">
-                                <span>Graphic Design</span>
-                                <span>Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-scroll-indicator">
-                <span>Scorri per esplorare</span>
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </section>
-
-        <!-- Section 4: Competenze -->
-        <section class="horizontal-section" id="services" data-section="3">
+        <!-- Section 3: Competenze -->
+        <section class="horizontal-section" id="services" data-section="2">
             <div class="glass-container">
                 <h2 class="section-title">Le Mie Aree di Competenza</h2>
                 <p class="section-subtitle">Competenze specialistiche sviluppate su progetti reali, con approccio strategico e orientamento ai dati</p>
                 <div class="services-grid">
-                    <a href="pages/social-media-management.html?from=3" class="service-card">
+                    <a href="pages/social-media-management.html?from=2" class="service-card">
                         <div class="service-icon">
                             <i class="fab fa-instagram"></i>
                         </div>
@@ -405,7 +346,7 @@
                             <span>Community Growth</span>
                         </div>
                     </a>
-                    <a href="pages/content-creation.html?from=3" class="service-card">
+                    <a href="pages/content-creation.html?from=2" class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-camera-retro"></i>
                         </div>
@@ -416,7 +357,7 @@
                             <span>Visual Design</span>
                         </div>
                     </a>
-                    <a href="pages/shooting.html?from=3" class="service-card">
+                    <a href="pages/shooting.html?from=2" class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-camera"></i>
                         </div>
@@ -427,7 +368,7 @@
                             <span>Visual Storytelling</span>
                         </div>
                     </a>
-                    <a href="pages/branding.html?from=3" class="service-card">
+                    <a href="pages/branding.html?from=2" class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-palette"></i>
                         </div>
@@ -438,7 +379,7 @@
                             <span>Brand Storytelling</span>
                         </div>
                     </a>
-                    <a href="pages/social-ads.html?from=3" class="service-card">
+                    <a href="pages/social-ads.html?from=2" class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-ad"></i>
                         </div>
@@ -449,7 +390,7 @@
                             <span>ROI Optimization</span>
                         </div>
                     </a>
-                    <a href="pages/influencer-marketing.html?from=3" class="service-card">
+                    <a href="pages/influencer-marketing.html?from=2" class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-users"></i>
                         </div>
@@ -475,14 +416,14 @@
         </section>
 
         <!-- Section 4: Portfolio -->
-        <section class="horizontal-section" id="portfolio" data-section="4">
+        <section class="horizontal-section" id="portfolio" data-section="3">
             <div class="glass-container portfolio-container">
                 <h2 class="section-title">Case Study</h2>
                 <p class="section-subtitle">Progetti reali con strategie, contenuti e risultati misurabili</p>
 
                 <div class="case-study-grid">
                     <!-- Case Study 1: Pizza a Portafoglio -->
-                    <a href="pages/case-pizza-portafoglio.html?from=4" class="case-study-card">
+                    <a href="pages/case-pizza-portafoglio.html?from=3" class="case-study-card">
                         <div class="case-study-image">
                             <img src="assets/img/portfolio/pizza-portafoglio-cover.jpg" alt="Case Study Pizza a Portafoglio - Lancio ristorante da zero con strategia social virale" loading="lazy">
                             <div class="case-study-badge">
@@ -499,11 +440,11 @@
                             <div class="case-study-metrics">
                                 <div class="metric">
                                     <i class="fas fa-rocket"></i>
-                                    <span>Da 0 a inaugurazione sold-out</span>
+                                    <span>Da 0 a 350+ persone in fila all'inaugurazione</span>
                                 </div>
                                 <div class="metric">
-                                    <i class="fas fa-video"></i>
-                                    <span>Video strategy con il titolare</span>
+                                    <i class="fas fa-play-circle"></i>
+                                    <span>12K+ views organiche in 48h sui reel di lancio</span>
                                 </div>
                             </div>
                             <span class="case-study-cta">
@@ -513,7 +454,7 @@
                     </a>
 
                     <!-- Case Study 2: Negozio Articoli Vari -->
-                    <a href="pages/case-negozio-articoli.html?from=4" class="case-study-card">
+                    <a href="pages/case-negozio-articoli.html?from=3" class="case-study-card">
                         <div class="case-study-image">
                             <img src="assets/img/portfolio/negozio-articoli-cover.jpg" alt="Case Study Negozio Articoli Vari - Community building su TikTok e Instagram con contenuti virali" loading="lazy">
                             <div class="case-study-badge">
@@ -530,11 +471,11 @@
                             <div class="case-study-metrics">
                                 <div class="metric">
                                     <i class="fas fa-users"></i>
-                                    <span>Community da zero</span>
+                                    <span>0 &rarr; 5.2K follower in 3 mesi (100% organico)</span>
                                 </div>
                                 <div class="metric">
-                                    <i class="fas fa-comment-dots"></i>
-                                    <span>Engagement altissimo</span>
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Engagement rate 8.5% (media settore: 1.2%)</span>
                                 </div>
                             </div>
                             <span class="case-study-cta">
@@ -544,7 +485,7 @@
                     </a>
 
                     <!-- Case Study 3: Centro Estetico -->
-                    <a href="pages/case-centro-estetico.html?from=4" class="case-study-card">
+                    <a href="pages/case-centro-estetico.html?from=3" class="case-study-card">
                         <div class="case-study-image">
                             <img src="assets/img/portfolio/centro-estetico-cover.jpg" alt="Case Study Centro Estetico - Contenuti educativi e professionali per estetica avanzata" loading="lazy">
                             <div class="case-study-badge">
@@ -560,12 +501,12 @@
                             <p>Strategia di contenuti educativi e professionali: case study reali, recensioni autentiche, collaborazioni con influencer e myth-busting.</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    <span>Contenuti educativi</span>
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>+240% crescita follower in 4 mesi</span>
                                 </div>
                                 <div class="metric">
                                     <i class="fas fa-handshake"></i>
-                                    <span>Influencer collab</span>
+                                    <span>5 collaborazioni influencer con ROI positivo</span>
                                 </div>
                             </div>
                             <span class="case-study-cta">
@@ -588,7 +529,7 @@
         </section>
 
         <!-- Section 5: Skills & Tools -->
-        <section class="horizontal-section" id="skills" data-section="5">
+        <section class="horizontal-section" id="skills" data-section="4">
             <div class="glass-container">
                 <h2 class="section-title">Skills & Tools</h2>
                 <p class="section-subtitle">Gli strumenti che utilizzo quotidianamente nella gestione dei progetti</p>
@@ -690,14 +631,63 @@
             </div>
         </section>
 
-        <!-- Section 7: Formazione & Certificazioni -->
-        <section class="horizontal-section" id="education" data-section="6">
-            <div class="glass-container">
-                <h2 class="section-title">Formazione & Certificazioni</h2>
-                <p class="section-subtitle">Percorso formativo e certificazioni professionali nel digital marketing</p>
+        <!-- Section 6: Esperienza & Formazione -->
+        <section class="horizontal-section" id="background" data-section="5">
+            <div class="glass-container" style="max-width: 1200px;">
+                <h2 class="section-title">Esperienza & Formazione</h2>
+                <p class="section-subtitle">Percorso professionale e formativo nel digital marketing</p>
 
                 <div class="education-grid">
-                    <!-- Formazione Accademica -->
+                    <!-- Esperienza Professionale -->
+                    <div class="education-block">
+                        <h3><i class="fas fa-briefcase"></i> Esperienza</h3>
+                        <div class="timeline" style="margin-top: 0;">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Social Media Manager</h3>
+                                    </div>
+                                    <span class="timeline-period">Gen 2023 — Presente</span>
+                                    <p>Gestione di 8+ clienti nel settore fashion, food e lifestyle. Crescita media dei profili gestiti: +180%.</p>
+                                    <div class="timeline-tags">
+                                        <span>Content Strategy</span>
+                                        <span>Meta Ads</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Content Creator & SMM Specialist</h3>
+                                    </div>
+                                    <span class="timeline-period">Mar 2021 — Dic 2022</span>
+                                    <p>Ideazione e produzione contenuti per brand emergenti. Shooting, video editing e campagne Meta/TikTok.</p>
+                                    <div class="timeline-tags">
+                                        <span>Content Creation</span>
+                                        <span>Video Editing</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Social Media Intern</h3>
+                                    </div>
+                                    <span class="timeline-period">Set 2020 — Feb 2021</span>
+                                    <p>Gestione canali social, creazione grafiche per stories e feed, monitoraggio KPI.</p>
+                                    <div class="timeline-tags">
+                                        <span>Graphic Design</span>
+                                        <span>Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formazione & Certificazioni -->
                     <div class="education-block">
                         <h3><i class="fas fa-graduation-cap"></i> Formazione</h3>
                         <div class="education-item">
@@ -706,7 +696,7 @@
                             </div>
                             <div class="education-info">
                                 <h4>Laurea in Scienze della Comunicazione</h4>
-                                <span class="education-place">Universita degli Studi di Roma</span>
+                                <span class="education-place">Universit&agrave; degli Studi di Roma</span>
                                 <span class="education-year">2018 — 2021</span>
                                 <p>Indirizzo comunicazione digitale e marketing. Tesi su strategie di brand positioning nei social media.</p>
                             </div>
@@ -722,11 +712,8 @@
                                 <p>Focus su social media strategy, content marketing, advertising e analytics.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Certificazioni -->
-                    <div class="education-block">
-                        <h3><i class="fas fa-certificate"></i> Certificazioni</h3>
+                        <h3 style="margin-top: 1.5rem;"><i class="fas fa-certificate"></i> Certificazioni</h3>
                         <div class="certifications-grid">
                             <div class="cert-item">
                                 <i class="fab fa-meta"></i>
@@ -751,132 +738,8 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-
-            <div class="hero-scroll-indicator">
-                <span>Scorri per esplorare</span>
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </section>
-
-        <!-- Section 8: Metodologia -->
-        <section class="horizontal-section" id="methodology" data-section="7">
-            <div class="glass-container">
-                <h2 class="section-title">Il Mio Metodo di Lavoro</h2>
-                <p class="section-subtitle">Un approccio strutturato e data-driven per ogni progetto</p>
-
-                <div class="methodology-grid">
-                    <div class="method-step">
-                        <div class="step-number">01</div>
-                        <div class="step-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Analisi</h3>
-                        <p>Studio del brand, analisi dei competitor, audit dei canali esistenti e definizione degli obiettivi. Ogni strategia parte dai dati.</p>
-                    </div>
-
-                    <div class="method-step">
-                        <div class="step-number">02</div>
-                        <div class="step-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Strategia</h3>
-                        <p>Definizione del piano editoriale, tone of voice, content pillars e KPI. Ogni azione ha un obiettivo misurabile e un ruolo nel funnel.</p>
-                    </div>
-
-                    <div class="method-step">
-                        <div class="step-number">03</div>
-                        <div class="step-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Esecuzione</h3>
-                        <p>Produzione contenuti, pubblicazione, community management e gestione campagne. Creativita e costanza nella delivery quotidiana.</p>
-                    </div>
-
-                    <div class="method-step">
-                        <div class="step-number">04</div>
-                        <div class="step-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Ottimizzazione</h3>
-                        <p>Monitoraggio KPI, reportistica periodica, A/B testing e ottimizzazione continua. I dati guidano ogni decisione successiva.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-scroll-indicator">
-                <span>Scorri per esplorare</span>
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </section>
-
-        <!-- Section 9: Testimonianze -->
-        <section class="horizontal-section" id="testimonials" data-section="8">
-            <div class="glass-container">
-                <h2 class="section-title">Feedback dai Progetti</h2>
-                <div class="testimonials-container">
-                    <div class="testimonial-item active">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left quote-icon"></i>
-                            <p>
-                                "In 6 mesi di collaborazione con Giulia siamo passati da 3.000 a 22.000 follower
-                                su Instagram, con un engagement rate del 15%. Approccio strategico, creatività
-                                e attenzione costante ai dati."
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" alt="Marco Rossi - CEO Innovation Lab" class="author-photo" loading="lazy">
-                            <div class="author-info">
-                                <h4>Marco Rossi</h4>
-                                <p>CEO, Innovation Lab</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left quote-icon"></i>
-                            <p>
-                                "Giulia ha curato l'intera brand identity del nostro studio: logo, template
-                                social e palette colori. Il risultato è un'identità visiva coerente che ci
-                                rende immediatamente riconoscibili."
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" alt="Sara Bianchi - Founder Bloom Studio" class="author-photo" loading="lazy">
-                            <div class="author-info">
-                                <h4>Sara Bianchi</h4>
-                                <p>Founder, Bloom Studio</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left quote-icon"></i>
-                            <p>
-                                "Le campagne Meta Ads gestite da Giulia hanno generato un ROI del 420%.
-                                Il suo metodo combina analisi dei dati, creatività mirata e ottimizzazione
-                                continua. Professionale e proattiva."
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" alt="Luca Verdi - Marketing Manager" class="author-photo" loading="lazy">
-                            <div class="author-info">
-                                <h4>Luca Verdi</h4>
-                                <p>Marketing Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-dots">
-                    <span class="t-dot active" data-testimonial="0"></span>
-                    <span class="t-dot" data-testimonial="1"></span>
-                    <span class="t-dot" data-testimonial="2"></span>
-                </div>
-            </div>
-
-            <!-- Floating Emojis -->
-            <div class="floating-emoji emoji-18">👏</div>
-            <div class="floating-emoji emoji-19">🌈</div>
 
             <div class="hero-scroll-indicator">
                 <span>Scorri per esplorare</span>
@@ -885,10 +748,10 @@
         </section>
 
         <!-- Section 7: Contatti -->
-        <section class="horizontal-section" id="contact" data-section="9">
+        <section class="horizontal-section" id="contact" data-section="6">
             <div class="glass-container">
                 <h2 class="section-title">Rimaniamo in contatto</h2>
-                <p class="contact-subtitle">Aperta a nuove opportunità professionali. Scrivimi, rispondo entro 24 ore.</p>
+                <p class="contact-subtitle">Aperta a nuove opportunit&agrave; professionali. Scrivimi, rispondo entro 24 ore.</p>
                 <div class="contact-content">
                     <div class="contact-info">
                         <a href="mailto:giuliis.fa.marketing@gmail.com" class="contact-item">
@@ -898,6 +761,10 @@
                         <a href="tel:+393202416567" class="contact-item">
                             <i class="fas fa-phone"></i>
                             <span>+39 320 241 6567</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/giulia-fadlon" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn — Giulia Fadlon</span>
                         </a>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -914,10 +781,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Floating Emojis -->
-            <div class="floating-emoji emoji-20">📧</div>
-            <div class="floating-emoji emoji-22">🤝</div>
         </section>
 
     </div>
@@ -925,20 +788,17 @@
     <!-- Section Navigation Dots -->
     <nav class="section-nav" aria-label="Navigazione Sezioni">
         <div class="nav-dot active" data-section="0" aria-label="Hero"></div>
-        <div class="nav-dot" data-section="1" aria-label="Chi Sono"></div>
-        <div class="nav-dot" data-section="2" aria-label="Esperienza"></div>
-        <div class="nav-dot" data-section="3" aria-label="Competenze"></div>
-        <div class="nav-dot" data-section="4" aria-label="Case Study"></div>
-        <div class="nav-dot" data-section="5" aria-label="Skills"></div>
-        <div class="nav-dot" data-section="6" aria-label="Formazione"></div>
-        <div class="nav-dot" data-section="7" aria-label="Metodo"></div>
-        <div class="nav-dot" data-section="8" aria-label="Testimonianze"></div>
-        <div class="nav-dot" data-section="9" aria-label="Contatti"></div>
+        <div class="nav-dot" data-section="1" aria-label="Portfolio"></div>
+        <div class="nav-dot" data-section="2" aria-label="Competenze"></div>
+        <div class="nav-dot" data-section="3" aria-label="Case Study"></div>
+        <div class="nav-dot" data-section="4" aria-label="Skills"></div>
+        <div class="nav-dot" data-section="5" aria-label="Esperienza"></div>
+        <div class="nav-dot" data-section="6" aria-label="Contatti"></div>
     </nav>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <span>&copy; 2025 Giulia Fadlon</span>
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> Giulia Fadlon</span>
     </footer>
 
     <!-- Horizontal Scroll JavaScript -->
