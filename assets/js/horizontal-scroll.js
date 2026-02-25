@@ -36,7 +36,7 @@ class HorizontalScroll {
         this.bindKeyboardNav();
 
         // Initialize portfolio filters
-        this.initPortfolioFilters();
+        // Portfolio filters removed — case study cards now link to detail pages
 
         // Initialize testimonials
         this.initTestimonials();
@@ -370,54 +370,7 @@ class HorizontalScroll {
         return false;
     }
 
-    // ===== PORTFOLIO FILTERS =====
-    initPortfolioFilters() {
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        if (filterBtns.length === 0) return;
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                // Get filter value
-                const filter = btn.getAttribute('data-filter');
-
-                // Filter portfolio items
-                portfolioItems.forEach(item => {
-                    if (filter === 'all') {
-                        // Show all items
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        // Check if item has the filter category
-                        const categories = item.getAttribute('data-category');
-                        if (categories && categories.includes(filter)) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 10);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    }
-                });
-            });
-        });
-    }
+    // Portfolio filters removed - case study cards replaced the old portfolio grid
 
     // ===== TESTIMONIALS SYSTEM =====
     initTestimonials() {
