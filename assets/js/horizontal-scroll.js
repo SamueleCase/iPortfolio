@@ -3,7 +3,7 @@
 class HorizontalScroll {
     constructor() {
         this.currentSection = 0;
-        this.totalSections = 7;
+        this.totalSections = 10;
         this.isScrolling = false;
         this.scrollTimeout = null;
         this.accumulatedDelta = 0;
@@ -307,7 +307,7 @@ class HorizontalScroll {
         if (sectionIndex === 1) {
             this.animateCounters();
         }
-        if (sectionIndex === 4) {
+        if (sectionIndex === 5) {
             this.animateSkillBars();
         }
     }
@@ -476,8 +476,8 @@ class HorizontalScroll {
         if (scriviBtn) {
             scriviBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                // Navigate to contact section (section 6)
-                this.goToSection(6);
+                // Navigate to contact section (section 9)
+                this.goToSection(9);
             });
         }
 
