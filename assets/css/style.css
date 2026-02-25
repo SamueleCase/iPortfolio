@@ -438,13 +438,40 @@ p {
 
 /* Hero Image - Right Side */
 .hero-image {
-  flex: 0 0 42%;
+  flex: 0 0 50%;
   position: relative;
   height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
+}
+
+/* Hero Tags above image */
+.hero-tags {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.35rem;
+  justify-content: center;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.hero-tag {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #5a4a42;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
 }
 
 .hero-image-accent {
@@ -461,8 +488,8 @@ p {
 }
 
 .hero-photo {
-  height: 85vh;
-  max-height: 900px;
+  height: 90vh;
+  max-height: 1000px;
   width: auto;
   object-fit: contain;
   object-position: bottom;
@@ -495,39 +522,7 @@ p {
   user-select: none;
 }
 
-/* Individual emoji positions and random animations */
-.emoji-1 {
-  top: 15%;
-  left: 10%;
-  font-size: 2.5rem;
-  animation: floatEmojiLeft 18s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
-.emoji-2 {
-  top: 25%;
-  right: 15%;
-  font-size: 2rem;
-  animation: floatEmojiRight 20s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.emoji-3 {
-  top: 60%;
-  left: 8%;
-  font-size: 3rem;
-  animation: floatEmojiZigzag 16s ease-in-out infinite;
-  animation-delay: 4s;
-}
-
-.emoji-4 {
-  top: 75%;
-  right: 12%;
-  font-size: 2.2rem;
-  animation: floatEmojiCircular 19s ease-in-out infinite;
-  animation-delay: 6s;
-}
-
+/* Individual emoji positions and animations */
 .emoji-5 {
   top: 20%;
   left: 12%;
@@ -576,14 +571,6 @@ p {
   animation-delay: 4.5s;
 }
 
-.emoji-11 {
-  bottom: 15%;
-  right: 12%;
-  font-size: 2.9rem;
-  animation: floatEmojiLeft 20s ease-in-out infinite;
-  animation-delay: 6.5s;
-}
-
 .emoji-12 {
   top: 22%;
   left: 14%;
@@ -624,14 +611,6 @@ p {
   animation-delay: 4s;
 }
 
-.emoji-17 {
-  bottom: 30%;
-  left: 13%;
-  font-size: 3rem;
-  animation: floatEmojiRight 20s ease-in-out infinite;
-  animation-delay: 6s;
-}
-
 .emoji-18 {
   top: 35%;
   right: 9%;
@@ -656,100 +635,12 @@ p {
   animation-delay: 0s;
 }
 
-.emoji-21 {
-  top: 58%;
-  right: 13%;
-  font-size: 2.5rem;
-  animation: floatEmojiLeft 19s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
 .emoji-22 {
   bottom: 22%;
   left: 14%;
   font-size: 3.2rem;
   animation: floatEmojiRight 17s ease-in-out infinite;
   animation-delay: 4s;
-}
-
-.emoji-23 {
-  top: 40%;
-  left: 20%;
-  font-size: 2.6rem;
-  animation: floatEmojiZigzag 19s ease-in-out infinite;
-  animation-delay: 1.2s;
-}
-
-.emoji-24 {
-  top: 85%;
-  right: 18%;
-  font-size: 2.4rem;
-  animation: floatEmojiCircular 18s ease-in-out infinite;
-  animation-delay: 3.5s;
-}
-
-.emoji-25 {
-  top: 35%;
-  left: 16%;
-  font-size: 2.7rem;
-  animation: floatEmojiDiagonal 20s ease-in-out infinite;
-  animation-delay: 0.8s;
-}
-
-.emoji-26 {
-  bottom: 30%;
-  right: 14%;
-  font-size: 2.5rem;
-  animation: floatEmojiLeft 21s ease-in-out infinite;
-  animation-delay: 4.2s;
-}
-
-.emoji-27 {
-  top: 50%;
-  left: 6%;
-  font-size: 3rem;
-  animation: floatEmojiRight 17s ease-in-out infinite;
-  animation-delay: 2.8s;
-}
-
-.emoji-28 {
-  bottom: 40%;
-  right: 9%;
-  font-size: 2.8rem;
-  animation: floatEmojiZigzag 19s ease-in-out infinite;
-  animation-delay: 5.5s;
-}
-
-.emoji-29 {
-  top: 42%;
-  left: 18%;
-  font-size: 2.3rem;
-  animation: floatEmojiCircular 22s ease-in-out infinite;
-  animation-delay: 1.8s;
-}
-
-.emoji-30 {
-  bottom: 28%;
-  right: 16%;
-  font-size: 2.9rem;
-  animation: floatEmojiDiagonal 18s ease-in-out infinite;
-  animation-delay: 6.2s;
-}
-
-.emoji-31 {
-  top: 48%;
-  left: 22%;
-  font-size: 2.6rem;
-  animation: floatEmojiLeft 16s ease-in-out infinite;
-  animation-delay: 3.2s;
-}
-
-.emoji-32 {
-  bottom: 38%;
-  right: 20%;
-  font-size: 3.1rem;
-  animation: floatEmojiRight 20s ease-in-out infinite;
-  animation-delay: 0.5s;
 }
 
 /* Multiple random movement animations */
@@ -1595,53 +1486,16 @@ p {
 
 /* ===== SECTION 6: CONTATTI ===== */
 #contact .glass-container {
-  max-width: 1100px;
+  max-width: 900px;
+  text-align: center;
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   margin-top: 2rem;
-}
-
-/* Contact Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-input,
-.form-textarea {
-  padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 15px;
-  font-family: var(--font-primary);
-  font-size: 1rem;
-  color: var(--dark-gray);
-  transition: var(--transition-smooth);
-  resize: none;
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: var(--medium-gray);
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.5);
-  border-color: var(--primary-pink);
-  box-shadow: 0 0 0 3px rgba(209, 156, 161, 0.1);
 }
 
 /* Contact Info */
@@ -1677,6 +1531,16 @@ p {
 .contact-item span {
   font-size: 1rem;
   color: var(--dark-gray);
+}
+
+a.contact-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.contact-item:hover {
+  border-color: rgba(209, 156, 161, 0.4);
 }
 
 .social-links {
@@ -1785,6 +1649,20 @@ p {
   background: var(--primary-pink);
 }
 
+/* ===== FOOTER ===== */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.75rem;
+  color: var(--medium-gray);
+  z-index: 10;
+  pointer-events: none;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   .glass-container {
@@ -1873,6 +1751,15 @@ p {
     flex: 0 0 auto;
     height: auto;
     max-height: 45vh;
+  }
+
+  .hero-tags {
+    top: 2%;
+  }
+
+  .hero-tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
   }
 
   .hero-photo {
@@ -1990,7 +1877,7 @@ p {
   }
 
   .contact-content {
-    grid-template-columns: 1fr;
+    align-items: stretch;
   }
 
   .section-nav {
@@ -2052,14 +1939,6 @@ p {
     min-height: 44px;
     padding: 16px;
     background-clip: content-box;
-  }
-
-  /* Form inputs - adequate touch target */
-  .form-input,
-  .form-textarea {
-    min-height: 44px;
-    padding: 1rem;
-    font-size: 16px; /* Prevents zoom on iOS */
   }
 
   /* Portfolio item minimum touch area */
