@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#FBF4F1;}a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}</style>
+</helmet>
+<div style="min-height:100vh;background:#FBF4F1;font-family:'Work Sans',sans-serif;color:#2B2226;padding:28px 24px 80px;">
+<div style="max-width:880px;margin:0 auto;">
+
+<div style="display:flex;justify-content:space-between;align-items:center;">
+  <a href="index.html#s5" style="font-size:14px;font-weight:500;">← <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Torna al portfolio</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Back to portfolio</sc-if></a>
+  <div style="display:flex;gap:2px;border:1px solid #E4CFD2;border-radius:999px;padding:3px;">
+    <button onClick="{{setIt}}" style="{{itBtnStyle}}">IT</button>
+    <button onClick="{{setEn}}" style="{{enBtnStyle}}">EN</button>
+  </div>
+</div>
+
+<header style="margin-top:44px;">
+  <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Case study 03 · Instagram · Beauty</div>
+  <h1 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(38px,6vw,62px);line-height:1.06;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Centro Estetico <span style="font-size:0.45em;color:#8A7378;font-family:'Work Sans',sans-serif;font-weight:400;">(nome protetto da riservatezza)</span></sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Aesthetics Clinic <span style="font-size:0.45em;color:#8A7378;font-family:'Work Sans',sans-serif;font-weight:400;">(name withheld for confidentiality)</span></sc-if></h1>
+  <p style="margin:16px 0 0;font-size:18px;line-height:1.6;color:#5F5257;max-width:60ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti educativi e professionali per un centro di estetica avanzata: case study reali, recensioni autentiche, collaborazioni influencer e myth-busting per costruire autorità e fiducia.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Educational, professional content for an advanced-aesthetics clinic: real case studies, authentic reviews, influencer collaborations and myth-busting to build authority and trust.</sc-if></p>
+</header>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;">
+  <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:16px 20px;"><div style="font-family:'Gloock',serif;font-size:28px;">+240%</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">crescita follower in 4 mesi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">follower growth in 4 months</sc-if></div></div>
+  <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:16px 20px;"><div style="font-family:'Gloock',serif;font-size:28px;">5</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">collab influencer, ROI positivo</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">influencer collabs, positive ROI</sc-if></div></div>
+  <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:16px 20px;"><div style="font-family:'Gloock',serif;font-size:28px;">Vero/Falso</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">il format a più alto engagement</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">the highest-engagement format</sc-if></div></div>
+</div>
+
+<div style="margin-top:16px;height:340px;border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
+  <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">foto copertina: la titolare al lavoro</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">cover photo: the owner at work</sc-if></span>
+</div>
+
+<section style="margin-top:52px;">
+  <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">La sfida</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The challenge</sc-if></div>
+  <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:30px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Distinguersi in un settore saturo di contenuti superficiali</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Standing out in a sector saturated with shallow content</sc-if></h2>
+  <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">L'estetica su Instagram è dominata da before/after senza contesto e promesse esagerate. La sfida: posizionare il centro come autorità dell'estetica avanzata, con un linguaggio professionale ma accessibile, educando il pubblico e costruendo fiducia reale.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Aesthetics on Instagram is dominated by context-free before/afters and inflated promises. The challenge: positioning the clinic as an authority in advanced aesthetics, professional yet accessible, educating the audience and building real trust.</sc-if></p>
+</section>
+
+<section style="margin-top:44px;">
+  <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Strategia</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Strategy</sc-if></div>
+  <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:30px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Educare per vendere, senza vendere</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Educate to sell, without selling</sc-if></h2>
+  <div style="display:grid;gap:12px;margin-top:20px;">
+    <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:20px 24px;display:grid;grid-template-columns:52px 1fr;gap:16px;">
+      <div style="font-family:'Gloock',serif;font-size:26px;color:#C28A94;">01</div>
+      <div><strong><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti educativi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Educational content</sc-if></strong><p style="margin:6px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Reel e caroselli che spiegano trattamenti, ingredienti e tecniche in modo chiaro: il pubblico impara qualcosa di concreto e riconosce la competenza del centro.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Reels and carousels explaining treatments, ingredients and techniques clearly: the audience learns something concrete and recognises the clinic's expertise.</sc-if></p></div>
+    </div>
+    <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:20px 24px;display:grid;grid-template-columns:52px 1fr;gap:16px;">
+      <div style="font-family:'Gloock',serif;font-size:26px;color:#C28A94;">02</div>
+      <div><strong><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Case study reali</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Real case studies</sc-if></strong><p style="margin:6px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Before/after con contesto: il problema della cliente, il trattamento scelto, quante sedute e perché. Non solo risultati, ma il ragionamento dietro.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Before/afters with context: the client's problem, the chosen treatment, how many sessions and why. Not just results — the reasoning behind them.</sc-if></p></div>
+    </div>
+    <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:20px 24px;display:grid;grid-template-columns:52px 1fr;gap:16px;">
+      <div style="font-family:'Gloock',serif;font-size:26px;color:#C28A94;">03</div>
+      <div><strong><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Recensioni e social proof</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Reviews and social proof</sc-if></strong><p style="margin:6px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Testimonianze reali delle clienti, video e testuali: le esperienze autentiche costruiscono fiducia più di qualsiasi copy pubblicitario.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Real client testimonials, in video and text: authentic experiences build trust better than any ad copy.</sc-if></p></div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:44px;">
+  <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content</sc-if></div>
+  <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:30px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Un mix calibrato di formati e toni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">A calibrated mix of formats and tones</sc-if></h2>
+  <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">La comunicazione alterna tono professionale e momenti umani, con la titolare come volto esperto: myth-busting "Vero o Falso", formato problema-soluzione e collaborazioni con influencer che provano davvero i trattamenti.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The communication alternates a professional tone with human moments, with the owner as the expert face: "True or False" myth-busting, problem-solution formats and collaborations with influencers who genuinely try the treatments.</sc-if></p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;">
+    <div style="height:300px;border-radius:12px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:12px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:6px 10px;border-radius:6px;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">carosello educativo</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">educational carousel</sc-if></span></div>
+    <div style="height:300px;border-radius:12px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:12px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:6px 10px;border-radius:6px;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">before/after con contesto</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">before/after with context</sc-if></span></div>
+    <div style="height:300px;border-radius:12px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:12px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:6px 10px;border-radius:6px;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">reel con influencer</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">influencer reel</sc-if></span></div>
+  </div>
+</section>
+
+<section style="margin-top:44px;background:#2B2226;color:#FBF4F1;border-radius:16px;padding:32px 36px;">
+  <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Risultato</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Result</sc-if></div>
+  <p style="font-family:'Gloock',serif;font-size:26px;line-height:1.35;margin:12px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">+240% di follower in 4 mesi e clienti che arrivano già informate e fiduciose: meno obiezioni, più valore per cliente.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">+240% followers in 4 months and clients arriving already informed and confident: fewer objections, higher value per client.</sc-if></p>
+  <p style="margin:18px 0 0;font-size:14px;color:#D9BFC3;font-family:monospace;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">[testimonianza della titolare — 1 frase, da richiedere]</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">[owner's testimonial — 1 sentence, to request]</sc-if></p>
+</section>
+
+<div style="margin-top:44px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid #EDDCDE;padding-top:24px;">
+  <span style="font-size:14px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Prossimo progetto</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Next project</sc-if></span>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="case-pizza.dc.html" style="background:#2B2226;color:#FBF4F1;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:500;" style-hover="background:#8A5560;color:#FBF4F1;">Pizza a Portafoglio →</a>
+    <a href="case-negozio.dc.html" style="border:1px solid #D9BFC3;color:#2B2226;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:500;" style-hover="border-color:#8A5560;color:#8A5560;">Negozio Articoli Vari →</a>
+  </div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: (()=>{ try { return localStorage.getItem('gf_lang') || 'it'; } catch(e){ return 'it'; } })() };
+  renderVals() {
+    const it = this.state.lang === 'it';
+    const set = (l) => { try { localStorage.setItem('gf_lang', l); } catch(e){} this.setState({ lang: l }); };
+    const btn = (on) => 'border:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:Work Sans,sans-serif;' + (on ? 'background:#2B2226;color:#FBF4F1;' : 'background:transparent;color:#8A7378;');
+    return { it, en: !it, setIt: () => set('it'), setEn: () => set('en'), itBtnStyle: btn(it), enBtnStyle: btn(!it) };
+  }
+}
+</script>
+</body>
+</html>
