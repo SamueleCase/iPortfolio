@@ -8,6 +8,7 @@
 <body>
 <x-dc>
 <helmet>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Work+Sans:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;padding:0;background:#FBF4F1;overflow:hidden;}
@@ -15,13 +16,29 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
 [data-scroller]{scrollbar-width:none;}
 [data-scroller]::-webkit-scrollbar{display:none;}
 ::selection{background:#F0DCDF;}
+@media (max-width: 991.98px){
+  html{scroll-snap-type:y proximity;}
+  html,body{overflow:auto;height:auto;}
+  .gf-root{height:auto !important;overflow:visible !important;}
+  .gf-scroller{display:block !important;height:auto !important;overflow:visible !important;scroll-snap-type:none !important;}
+  .gf-slide{width:100% !important;height:auto !important;min-height:100vh !important;min-height:100svh !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;gap:26px !important;padding:84px 6vw 112px !important;overflow:visible !important;}
+  .gf-slide a{overflow-wrap:anywhere;}
+  .gf-heromedia{height:min(48vh,400px) !important;border-radius:18px !important;margin-top:0 !important;flex:0 0 auto;}
+  .gf-media{height:260px !important;flex:0 0 auto;}
+  .gf-3col{display:grid !important;grid-template-columns:1fr !important;}
+  .gf-cols{display:flex !important;flex-direction:column !important;gap:22px !important;}
+  .gf-top{position:fixed !important;}
+  .gf-bottom{position:fixed !important;background:linear-gradient(0deg,#FBF4F1 55%,rgba(251,244,241,0));padding-top:26px !important;}
+  .gf-copy{position:static !important;margin-top:20px;}
+}
+@keyframes gfBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
 </style>
 </helmet>
-<div style="height:100vh;background:#FBF4F1;font-family:'Work Sans',sans-serif;color:#2B2226;position:relative;overflow:hidden;">
+<div class="gf-root" style="height:100vh;background:#FBF4F1;font-family:'Work Sans',sans-serif;color:#2B2226;position:relative;overflow:hidden;">
 
-<div data-scroller="1" ref="{{scrollerRef}}" onScroll="{{onScroll}}" onWheel="{{onWheel}}" style="display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;">
+<div class="gf-scroller" data-scroller="1" ref="{{scrollerRef}}" onScroll="{{onScroll}}" style="display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;">
 
-<section data-screen-label="01 Hero" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.12fr 0.88fr;padding:clamp(56px,10vh,84px) 5vw clamp(64px,10vh,76px);gap:3vw;overflow:hidden;">
+<section class="gf-slide" data-screen-label="01 Hero" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.12fr 0.88fr;padding:clamp(56px,10vh,84px) 5vw clamp(64px,10vh,76px);gap:3vw;overflow:hidden;">
   <div style="display:flex;flex-direction:column;justify-content:center;min-width:0;">
     <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Social Media Manager</div>
     <h1 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(32px,4.9vw,76px);line-height:1.05;margin:16px 0 0;text-wrap:pretty;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti che riempiono i locali, non solo i feed.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content that fills venues, not just feeds.</sc-if></h1>
@@ -35,13 +52,14 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
       <span><strong style="color:#2B2226;font-weight:600;">+240%</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">follower in 4 mesi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">followers in 4 months</sc-if></span>
       <span><strong style="color:#2B2226;font-weight:600;">8</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">clienti gestiti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">clients managed</sc-if></span>
     </div>
+    <div class="d-lg-none" style="margin-top:26px;font-size:13px;color:#8A5560;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;animation:gfBounce 1.6s infinite;">↓</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Scorri per esplorare</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Scroll to explore</sc-if></div>
   </div>
-  <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,#F6E7E4 0%,#EDD6D5 100%);border-radius:18px 18px 0 0;margin-top:12px;min-width:0;">
+  <div class="gf-heromedia" style="position:relative;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,#F6E7E4 0%,#EDD6D5 100%);border-radius:18px 18px 0 0;margin-top:12px;min-width:0;">
     <img src="assets/giulia-busto-intero.png" alt="Giulia Fadlon" style="display:block;max-height:92%;max-width:88%;object-fit:contain;object-position:bottom;" />
   </div>
 </section>
 
-<section data-screen-label="02 Showreel" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;">
+<section class="gf-slide" data-screen-label="02 Showreel" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Showreel</div>
   <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);margin:14px 0 0;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">45 secondi di lavoro, prima di ogni parola.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">45 seconds of work, before any words.</sc-if></h2>
   <div style="width:min(880px,80vw,82vh);aspect-ratio:16/9;margin-top:clamp(16px,3vh,32px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">
@@ -51,7 +69,7 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
   <p style="margin:clamp(10px,2vh,20px) 0 0;font-size:14px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Una selezione dei contenuti prodotti tra il 2023 e il 2026.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">A selection of content produced between 2023 and 2026.</sc-if></p>
 </section>
 
-<section data-screen-label="03 Case Pizza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.05fr 0.95fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;background:#FFFDFC;">
+<section class="gf-slide" data-screen-label="03 Case Pizza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.05fr 0.95fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;background:#FFFDFC;">
   <div style="min-width:0;">
     <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Case study 01 · Instagram · Food</div>
     <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">350+ persone in fila all'inaugurazione. Da zero follower.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">350+ people queuing on opening day. From zero followers.</sc-if></h2>
@@ -63,13 +81,13 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
     </div>
     <a href="case-pizza.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Leggi il case study →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Read the case study →</sc-if></a>
   </div>
-  <div style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
+  <div class="gf-media" style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
     <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">foto: fila all'inaugurazione</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">photo: opening-day queue</sc-if></span>
   </div>
 </section>
 
-<section data-screen-label="04 Case Negozio" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:0.95fr 1.05fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;">
-  <div style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
+<section class="gf-slide" data-screen-label="04 Case Negozio" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:0.95fr 1.05fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;">
+  <div class="gf-media" style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
     <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">frame: sketch dei titolari</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">frame: owners' sketch video</sc-if></span>
   </div>
   <div style="min-width:0;">
@@ -85,7 +103,7 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
   </div>
 </section>
 
-<section data-screen-label="05 Case Estetico" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.05fr 0.95fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;background:#FFFDFC;">
+<section class="gf-slide" data-screen-label="05 Case Estetico" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.05fr 0.95fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;background:#FFFDFC;">
   <div style="min-width:0;">
     <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Case study 03 · Instagram · Beauty</div>
     <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">+240% di follower in 4 mesi, educando invece di vendere.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">+240% followers in 4 months, by teaching instead of selling.</sc-if></h2>
@@ -96,51 +114,52 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
     </div>
     <a href="case-estetico.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Leggi il case study →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Read the case study →</sc-if></a>
   </div>
-  <div style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
+  <div class="gf-media" style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
     <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">carosello educativo / before-after</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">educational carousel / before-after</sc-if></span>
   </div>
 </section>
 
-<section data-screen-label="06 Metodo" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,11.5vh,96px) 7vw clamp(48px,9vh,76px);overflow:hidden;">
+<section class="gf-slide" data-screen-label="06 Metodo" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,11.5vh,96px) 7vw clamp(48px,9vh,76px);overflow:hidden;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il metodo</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The method</sc-if></div>
   <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);margin:14px 0 0;max-width:24ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Tre fasi, ogni volta. Con una prova per ciascuna.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Three phases, every time. Each with proof.</sc-if></h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vh,20px);margin-top:clamp(20px,4vh,40px);">
+  <div class="gf-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vh,20px);margin-top:clamp(20px,4vh,40px);">
     <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:clamp(18px,2.8vh,28px);">
       <div style="font-family:'Gloock',serif;font-size:15px;color:#C28A94;">01</div>
       <h3 style="font-family:'Gloock',serif;font-weight:400;font-size:23px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Strategia e piano editoriale</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Strategy and editorial plan</sc-if></h3>
       <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Posizionamento, tono di voce e formati ricorrenti costruiti sull'identità del cliente, non su template.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Positioning, tone of voice and recurring formats built on the client's identity, not on templates.</sc-if></p>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Consegno: analisi competitor, posizionamento, piano editoriale e calendario mensile.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Deliverables: competitor analysis, positioning, editorial plan and monthly calendar.</sc-if></p>
       <div style="margin-top:18px;padding-top:14px;border-top:1px solid #EDDCDE;font-size:14px;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">→ Il titolare in dialetto: 350+ in fila</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">→ Owner-led dialect videos: 350+ queue</sc-if></div>
     </div>
     <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:clamp(18px,2.8vh,28px);">
       <div style="font-family:'Gloock',serif;font-size:15px;color:#C28A94;">02</div>
       <h3 style="font-family:'Gloock',serif;font-weight:400;font-size:23px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Produzione contenuti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content production</sc-if></h3>
       <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Reel, grafiche, shooting e copy: giro con il set in borsa e produco dove il contenuto succede.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Reels, graphics, shoots and copy: I carry the set in my bag and produce where content happens.</sc-if></p>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Consegno: reel montati, grafiche feed e stories, shooting sul posto, copy.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Deliverables: edited reels, feed and stories graphics, on-site shoots, copy.</sc-if></p>
       <div style="margin-top:18px;padding-top:14px;border-top:1px solid #EDDCDE;font-size:14px;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">→ 12K+ view organiche in 48 ore</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">→ 12K+ organic views in 48 hours</sc-if></div>
     </div>
     <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:clamp(18px,2.8vh,28px);">
       <div style="font-family:'Gloock',serif;font-size:15px;color:#C28A94;">03</div>
       <h3 style="font-family:'Gloock',serif;font-weight:400;font-size:23px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Adv e analisi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Ads and analytics</sc-if></h3>
       <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Meta Ads, A/B testing e report mensili: ogni scelta creativa risponde a un numero.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Meta Ads, A/B testing and monthly reports: every creative choice answers to a number.</sc-if></p>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Consegno: setup campagne, A/B test creativi, report mensile con azioni.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Deliverables: campaign setup, creative A/B tests, monthly report with actions.</sc-if></p>
       <div style="margin-top:18px;padding-top:14px;border-top:1px solid #EDDCDE;font-size:14px;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">→ Engagement 8.5% vs 1.2% di settore</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">→ 8.5% engagement vs 1.2% industry</sc-if></div>
     </div>
   </div>
+  <div style="display:flex;align-items:baseline;gap:10px 16px;margin-top:clamp(14px,2.4vh,24px);flex-wrap:wrap;background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:14px 22px;font-size:14px;color:#5F5257;">
+    <strong style="color:#2B2226;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il ciclo con ogni cliente</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The cycle with every client</sc-if></strong>
+    <span><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Audit e obiettivi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Audit and goals</sc-if> <span style="color:#C28A94;">→</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Piano 90 giorni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">90-day plan</sc-if> <span style="color:#C28A94;">→</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Produzione settimanale</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Weekly production</sc-if> <span style="color:#C28A94;">→</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Report mensile</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Monthly report</sc-if></span>
+  </div>
 </section>
 
-<section data-screen-label="07 Esperienza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);overflow:hidden;">
+<section class="gf-slide" data-screen-label="07 Esperienza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);overflow:hidden;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;margin-bottom:8px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il percorso</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Background</sc-if></div><h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(24px,3vw,44px);margin:0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Esperienza, formazione, strumenti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Experience, education, tools</sc-if></h2>
-  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;margin-top:clamp(10px,2.2vh,32px);align-items:start;">
+  <div style="display:flex;gap:22px;margin-top:10px;font-size:14px;color:#8A7378;flex-wrap:wrap;"><span><strong style="color:#2B2226;font-weight:600;">3</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">anni in agenzia</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">years in an agency</sc-if></span><span><strong style="color:#2B2226;font-weight:600;">3</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">settori: food, retail, beauty</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">sectors: food, retail, beauty</sc-if></span><span><strong style="color:#2B2226;font-weight:600;">4</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">certifications</sc-if></span></div>
+  <div class="gf-cols" style="display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;margin-top:clamp(10px,2.2vh,32px);align-items:start;">
     <div style="display:grid;gap:clamp(10px,1.8vh,18px);align-content:start;"><div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Esperienza</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Experience</sc-if></div>
       <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-left:3px solid #C28A94;border-radius:0 12px 12px 0;padding:clamp(12px,2vh,18px) 20px;">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><strong style="font-size:17px;">Social Media Manager <span style="font-weight:400;color:#8A7378;">· freelance</span></strong><span style="font-size:13px;color:#8A7378;white-space:nowrap;">2023 — <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">oggi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">now</sc-if></span></div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.5;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">8 clienti in food, retail e beauty, tra cui Pizza a Portafoglio e un centro di estetica avanzata. Strategia, produzione e adv end-to-end.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">8 clients across food, retail and beauty, including Pizza a Portafoglio and an advanced-aesthetics clinic. End-to-end strategy, production and ads.</sc-if></p>
-      </div>
-      <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-left:3px solid #E4CFD2;border-radius:0 12px 12px 0;padding:clamp(12px,2vh,18px) 20px;">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><strong style="font-size:17px;">Content Creator &amp; SMM Specialist</strong><span style="font-size:13px;color:#8A7378;white-space:nowrap;">2021 — 2022</span></div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.5;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti per brand emergenti: shooting, video editing e campagne Meta/TikTok.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content for emerging brands: shoots, video editing and Meta/TikTok campaigns.</sc-if></p>
-      </div>
-      <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-left:3px solid #E4CFD2;border-radius:0 12px 12px 0;padding:clamp(12px,2vh,18px) 20px;">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><strong style="font-size:17px;">Social Media Intern</strong><span style="font-size:13px;color:#8A7378;white-space:nowrap;">2020 — 2021</span></div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.5;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Gestione canali, grafiche per feed e stories, monitoraggio KPI.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Channel management, feed and stories graphics, KPI monitoring.</sc-if></p>
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><strong style="font-size:17px;">Social Media Manager <span style="font-weight:400;color:#8A7378;">· <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">in agenzia</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">agency</sc-if></span></strong><span style="font-size:13px;color:#8A7378;white-space:nowrap;">2023 — <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">oggi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">now</sc-if></span></div>
+        <p style="margin:6px 0 0;font-size:14px;line-height:1.5;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">8 clienti dell'agenzia in food, retail e beauty, tra cui Pizza a Portafoglio e un centro di estetica avanzata. Strategia, produzione e adv end-to-end.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">8 agency clients across food, retail and beauty, including Pizza a Portafoglio and an advanced-aesthetics clinic. End-to-end strategy, production and ads.</sc-if></p>
+        <div style="margin-top:8px;font-size:13.5px;color:#8A5560;">→ <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Retention media: 12+ mesi per cliente</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Average retention: 12+ months per client</sc-if></div>
       </div>
       <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:12px 16px;font-size:13.5px;line-height:1.6;color:#5F5257;">
         <strong style="color:#2B2226;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Strumenti per fase di lavoro</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Tools by phase</sc-if></strong><br />
@@ -149,32 +168,27 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
     </div>
     <div style="display:grid;gap:14px;align-content:start;"><div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Formazione e certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Education and certifications</sc-if></div>
       <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:clamp(12px,2.2vh,18px) 22px;">
-        <strong style="font-size:16px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Laurea in Scienze della Comunicazione</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">BA in Communication Sciences</sc-if></strong>
-        <div style="font-size:14px;color:#8A5560;margin-top:3px;">Università degli Studi di Roma · 2018 — 2021</div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.55;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Tesi sul brand positioning nei social media.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Thesis on brand positioning in social media.</sc-if></p>
-      </div>
-      <div style="background:#FFFDFC;border:1px dashed #C28A94;border-radius:12px;padding:clamp(12px,2.2vh,18px) 22px;">
-        <strong style="font-size:16px;">Master in Digital Marketing</strong>
-        <div style="font-size:14px;color:#8A5560;margin-top:3px;font-family:monospace;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">[nome reale della business school] · 2022</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">[real business school name] · 2022</sc-if></div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.55;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Social media strategy, content marketing, advertising e analytics.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Social media strategy, content marketing, advertising and analytics.</sc-if></p>
+        <strong style="font-size:16px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Diploma Tecnico in Marketing</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Technical Diploma in Marketing</sc-if></strong>
+        <div style="font-size:14px;color:#8A5560;margin-top:3px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Istituto tecnico, indirizzo Marketing · 2023</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Technical institute, Marketing track · 2023</sc-if></div>
+        <p style="margin:6px 0 0;font-size:14px;line-height:1.55;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Diplomata con votazione </sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Graduated with full marks, </sc-if><strong style="color:#2B2226;">100/100</strong>.</p>
       </div>
       <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:clamp(12px,2.2vh,18px) 22px;">
         <strong style="font-size:16px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Certifications</sc-if></strong>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-top:10px;font-size:14px;color:#5F5257;line-height:1.4;">
-          <span><strong style="color:#2B2226;">Meta Blueprint</strong><br />Digital Marketing Associate</span>
-          <span><strong style="color:#2B2226;">Google Analytics</strong><br />GA4 Certification</span>
-          <span><strong style="color:#2B2226;">HubSpot</strong><br />Social Media Marketing</span>
-          <span><strong style="color:#2B2226;">Meta Ads</strong><br />Media Planning Professional</span>
+          <span><strong style="color:#2B2226;">Meta Blueprint</strong><br />Digital Marketing Associate · 2023</span>
+          <span><strong style="color:#2B2226;">Google Analytics</strong><br />GA4 Certification · 2024</span>
+          <span><strong style="color:#2B2226;">HubSpot</strong><br />Social Media Marketing · 2023</span>
+          <span><strong style="color:#2B2226;">Meta Ads</strong><br />Media Planning Professional · 2024</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section data-screen-label="08 Contatti" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;background:#FFFDFC;text-align:center;">
+<section class="gf-slide" data-screen-label="08 Contatti" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;background:#FFFDFC;text-align:center;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contatti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Contact</sc-if></div>
   <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(30px,4.4vw,66px);margin:14px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Parliamone.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Let's talk.</sc-if></h2>
-  <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:17px;line-height:1.65;color:#5F5257;max-width:58ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Sono Giulia, romana, e da tre anni faccio crescere attività locali sui social producendo tutto in prima persona. Cerco un'agenzia dove portare questo metodo su brand più grandi: se cercate una SMM che produce e misura, scrivetemi — rispondo entro 24 ore.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">I'm Giulia, based in Rome. For three years I've grown local businesses on social media, producing everything hands-on. I'm looking for an agency where this method can scale to bigger brands: if you need an SMM who produces and measures, write me — I reply within 24 hours.</sc-if></p>
+  <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:17px;line-height:1.65;color:#5F5257;max-width:58ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Sono Giulia, romana. Da tre anni gestisco in agenzia i social di attività locali, producendo tutto in prima persona. Cerco una nuova agenzia dove portare questo metodo su brand più grandi: se cercate una SMM che produce e misura, scrivetemi — rispondo entro 24 ore.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">I'm Giulia, based in Rome. For three years I've managed local businesses' social media at an agency, producing everything hands-on. I'm looking for a new agency where this method can scale to bigger brands: if you need an SMM who produces and measures, write me — I reply within 24 hours.</sc-if></p>
   <div style="display:flex;gap:12px;margin-top:clamp(18px,3.4vh,34px);flex-wrap:wrap;justify-content:center;">
     <a href="mailto:giuliis.fa.marketing@gmail.com" style="background:#2B2226;color:#FBF4F1;padding:16px 30px;border-radius:999px;font-weight:500;font-size:16px;" style-hover="background:#8A5560;color:#FBF4F1;">giuliis.fa.marketing@gmail.com</a>
     <a href="assets/cv-giulia-fadlon.pdf" target="_blank" style="border:1px solid #D9BFC3;color:#2B2226;padding:15px 28px;border-radius:999px;font-weight:500;font-size:16px;" style-hover="border-color:#8A5560;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Scarica il CV</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Download CV</sc-if></a>
@@ -185,13 +199,13 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
     <span>Roma, Italia</span>
     <a href="https://www.instagram.com/giuliis.smm" target="_blank">@giuliis.smm</a>
   </div>
-  <div style="position:absolute;bottom:64px;font-size:12px;color:#B9AAA4;">© 2026 Giulia Fadlon</div>
+  <div class="gf-copy" style="position:absolute;bottom:64px;font-size:12px;color:#B9AAA4;">© 2026 Giulia Fadlon</div>
 </section>
 </div>
 
-<div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;box-sizing:border-box;z-index:10;background:linear-gradient(180deg,rgba(251,244,241,0.94) 55%,rgba(251,244,241,0));">
+<div class="gf-top" style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;box-sizing:border-box;z-index:10;background:linear-gradient(180deg,rgba(251,244,241,0.94) 55%,rgba(251,244,241,0));">
   <button onClick="{{goHome}}" style="background:none;border:none;cursor:pointer;font-family:'Gloock',serif;font-size:19px;color:#2B2226;padding:0;">Giulia Fadlon</button>
-  <nav style="display:flex;gap:24px;align-items:center;">
+  <nav class="d-none d-lg-flex" style="display:flex;gap:24px;align-items:center;">
     <sc-for list="{{navItems}}" as="item" hint-placeholder-count="6">
       <button onClick="{{item.go}}" style="{{item.style}}" style-hover="color:#8A5560;">{{item.label}}</button>
     </sc-for>
@@ -202,12 +216,12 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
   </div>
 </div>
 
-<div style="position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;box-sizing:border-box;z-index:10;">
+<div class="gf-bottom" style="position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;box-sizing:border-box;z-index:10;">
   <div style="font-size:13px;color:#8A7378;letter-spacing:0.12em;min-width:72px;">{{counter}}</div>
   <div style="flex:1;max-width:520px;height:2px;background:#EDDCDE;margin:0 24px;border-radius:99px;"><div style="{{progressStyle}}"></div></div>
   <div style="display:flex;gap:10px;">
-    <button onClick="{{prev}}" aria-label="Precedente" style="width:42px;height:42px;border-radius:999px;border:1px solid #D9BFC3;background:#FFFDFC;color:#2B2226;cursor:pointer;font-size:16px;" style-hover="border-color:#8A5560;color:#8A5560;">←</button>
-    <button onClick="{{next}}" aria-label="Successiva" style="width:42px;height:42px;border-radius:999px;border:1px solid #2B2226;background:#2B2226;color:#FBF4F1;cursor:pointer;font-size:16px;" style-hover="background:#8A5560;border-color:#8A5560;">→</button>
+    <button onClick="{{prev}}" aria-label="Precedente" style="width:42px;height:42px;border-radius:999px;border:1px solid #D9BFC3;background:#FFFDFC;color:#2B2226;cursor:pointer;font-size:16px;" style-hover="border-color:#8A5560;color:#8A5560;"><span class="d-none d-lg-inline">←</span><span class="d-lg-none">↑</span></button>
+    <button onClick="{{next}}" aria-label="Successiva" style="width:42px;height:42px;border-radius:999px;border:1px solid #2B2226;background:#2B2226;color:#FBF4F1;cursor:pointer;font-size:16px;" style-hover="background:#8A5560;border-color:#8A5560;"><span class="d-none d-lg-inline">→</span><span class="d-lg-none">↓</span></button>
   </div>
 </div>
 
@@ -219,21 +233,52 @@ class Component extends DCLogic {
   scroller = React.createRef();
   TOTAL = 8;
 
+  isDesktop() { try { return window.matchMedia('(min-width: 992px)').matches; } catch(e){ return true; } }
   componentDidMount() {
     this.onKey = (e) => {
-      if (e.key === 'ArrowRight') this.goTo(this.state.idx + 1);
-      if (e.key === 'ArrowLeft') this.goTo(this.state.idx - 1);
+      if (!this.isDesktop()) return;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); this.goTo(this.state.idx + 1); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); this.goTo(this.state.idx - 1); }
     };
     window.addEventListener('keydown', this.onKey);
+    this.onWheelN = (e) => {
+      if (!this.isDesktop()) return;
+      e.preventDefault();
+      const now = Date.now();
+      if (this._wheelLock && now - this._wheelLock < 650) return;
+      const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (Math.abs(d) < 8) return;
+      this._wheelLock = now;
+      this.goTo(this.state.idx + (d > 0 ? 1 : -1));
+    };
+    if (this.scroller.current) this.scroller.current.addEventListener('wheel', this.onWheelN, { passive: false });
+    this.onWinScroll = () => {
+      if (this.isDesktop()) return;
+      const el = this.scroller.current; if (!el) return;
+      const y = window.scrollY + window.innerHeight * 0.35;
+      let i = 0;
+      Array.from(el.children).forEach((s, k) => { if (s.offsetTop <= y) i = k; });
+      if (i !== this.state.idx) { this.setState({ idx: i }); try { history.replaceState(null, '', '#s' + (i + 1)); } catch(err){} }
+    };
+    window.addEventListener('scroll', this.onWinScroll, { passive: true });
     const m = (location.hash || '').match(/^#s(\d+)$/);
     if (m) { const i = Math.min(this.TOTAL - 1, Math.max(0, parseInt(m[1], 10) - 1)); setTimeout(() => this.goTo(i, 'auto'), 60); }
   }
-  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKey);
+    if (this.scroller.current && this.onWheelN) this.scroller.current.removeEventListener('wheel', this.onWheelN);
+    if (this.onWinScroll) window.removeEventListener('scroll', this.onWinScroll);
+  }
 
   goTo(i, behavior) {
     const el = this.scroller.current; if (!el) return;
     const idx = Math.min(this.TOTAL - 1, Math.max(0, i));
-    el.scrollTo({ left: idx * el.clientWidth, behavior: behavior || 'smooth' });
+    if (this.isDesktop()) {
+      el.scrollTo({ left: idx * el.clientWidth, behavior: behavior || 'smooth' });
+    } else {
+      const sec = el.children[idx]; if (!sec) return;
+      window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 2, behavior: behavior || 'smooth' });
+    }
   }
 
   renderVals() {
@@ -266,14 +311,6 @@ class Component extends DCLogic {
         const el = e.currentTarget;
         const i = Math.round(el.scrollLeft / el.clientWidth);
         if (i !== this.state.idx) { this.setState({ idx: i }); try { history.replaceState(null, '', '#s' + (i + 1)); } catch(err){} }
-      },
-      onWheel: (e) => {
-        const now = Date.now();
-        if (this._wheelLock && now - this._wheelLock < 700) return;
-        const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-        if (Math.abs(d) < 12) return;
-        this._wheelLock = now;
-        this.goTo(this.state.idx + (d > 0 ? 1 : -1));
       },
       goHome: () => this.goTo(0),
       goProjects: () => this.goTo(2),

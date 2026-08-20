@@ -8,14 +8,15 @@
 <body>
 <x-dc>
 <helmet>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
-<style>html,body{margin:0;background:#FBF4F1;}a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}</style>
+<style>html,body{margin:0;background:#FBF4F1;}a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}@media (max-width:767.98px){.gf-3col{grid-template-columns:1fr !important;}.gf-2col{grid-template-columns:1fr !important;}}</style>
 </helmet>
 <div style="min-height:100vh;background:#FBF4F1;font-family:'Work Sans',sans-serif;color:#2B2226;padding:28px 24px 80px;">
 <div style="max-width:880px;margin:0 auto;">
 
 <div style="display:flex;justify-content:space-between;align-items:center;">
-  <a href="index.html#s3" style="font-size:14px;font-weight:500;">← <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Torna al portfolio</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Back to portfolio</sc-if></a>
+  <a href="sito-portfolio.dc.html#s3" style="font-size:14px;font-weight:500;">← <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Torna al portfolio</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Back to portfolio</sc-if></a>
   <div style="display:flex;gap:2px;border:1px solid #E4CFD2;border-radius:999px;padding:3px;">
     <button onClick="{{setIt}}" style="{{itBtnStyle}}">IT</button>
     <button onClick="{{setEn}}" style="{{enBtnStyle}}">EN</button>
@@ -28,7 +29,7 @@
   <p style="margin:16px 0 0;font-size:18px;line-height:1.6;color:#5F5257;max-width:60ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Lancio completo di una nuova pizzeria: dalla strategia pre-opening ai contenuti virali, fino all'inaugurazione con 350+ persone in fila.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Full launch of a new pizzeria: from pre-opening strategy to viral content, ending with 350+ people queuing on opening day.</sc-if></p>
 </header>
 
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;">
+<div class="gf-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;">
   <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:16px 20px;"><div style="font-family:'Gloock',serif;font-size:28px;">350+</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">persone in fila al debutto</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">people queuing at debut</sc-if></div></div>
   <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:16px 20px;"><div style="font-family:'Gloock',serif;font-size:28px;">12K+</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">view organiche in 48h</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">organic views in 48h</sc-if></div></div>
   <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:16px 20px;"><div style="font-family:'Gloock',serif;font-size:28px;">0€</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">di adv: 100% organico</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">ad spend: 100% organic</sc-if></div></div>
@@ -67,7 +68,7 @@
   <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content</sc-if></div>
   <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:30px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Video in dialetto, ironia e il titolare come protagonista</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Dialect videos, irony and the owner as protagonist</sc-if></h2>
   <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il cuore della strategia era il titolare stesso: video in dialetto napoletano, tono ironico e spontaneo, interazioni genuine con i clienti. Non contenuti patinati, ma autentici e riconoscibili.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The heart of the strategy was the owner himself: Neapolitan-dialect videos, an ironic, spontaneous tone, genuine interactions with customers. Not polished content — authentic and recognisable.</sc-if></p>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;">
+  <div class="gf-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;">
     <div style="height:300px;border-radius:12px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:12px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:6px 10px;border-radius:6px;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">reel: view count visibile</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">reel: visible view count</sc-if></span></div>
     <div style="height:300px;border-radius:12px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:12px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:6px 10px;border-radius:6px;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">behind the scenes</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">behind the scenes</sc-if></span></div>
     <div style="height:300px;border-radius:12px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:12px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:6px 10px;border-radius:6px;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">screenshot insight</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">insights screenshot</sc-if></span></div>
