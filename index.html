@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<!-- Elenco delle foto della galleria "I miei lavori": si modifica solo questo file. -->
+<script src="./assets/gallery.js"></script>
 </head>
 <body>
 <x-dc>
@@ -16,6 +18,12 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
 [data-scroller]{scrollbar-width:none;}
 [data-scroller]::-webkit-scrollbar{display:none;}
 ::selection{background:#F0DCDF;}
+.gf-feed{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:8px;width:100%;max-width:min(100%,66vh);aspect-ratio:1/1;}
+.gf-tile{position:relative;overflow:hidden;border-radius:10px;margin:0;aspect-ratio:1/1;border:1px solid #EDDCDE;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);}
+.gf-tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 7px;background:linear-gradient(0deg,rgba(43,34,38,0.88) 45%,rgba(43,34,38,0));color:#FBF4F1;pointer-events:none;}
+@media (max-width: 991.98px){
+  .gf-feed{max-width:none !important;aspect-ratio:auto !important;grid-template-rows:none !important;}
+}
 @media (max-width: 991.98px){
   html{scroll-snap-type:y proximity;}
   html,body{overflow:auto;height:auto;}
@@ -119,7 +127,33 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
   </div>
 </section>
 
-<section class="gf-slide" data-screen-label="06 Metodo" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,11.5vh,96px) 7vw clamp(48px,9vh,76px);overflow:hidden;">
+<section class="gf-slide" data-screen-label="06 Lavori" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:0.95fr 1.05fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:center;min-width:0;">
+    <div class="gf-feed">
+      <sc-for list="{{galleryItems}}" as="item" hint-placeholder-count="9">
+        <figure class="gf-tile" title="{{item.title}}">
+          <img src="{{item.src}}" alt="{{item.alt}}" loading="lazy" style="{{item.imgStyle}}" />
+          <figcaption>
+            <div style="font-size:11px;font-weight:600;line-height:1.25;letter-spacing:0.01em;">{{item.label}}</div>
+            <div style="font-size:10px;line-height:1.3;color:#E4CFD2;margin-top:1px;">{{item.meta}}</div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+  <div style="min-width:0;">
+    <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">I miei lavori</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Selected work</sc-if></div>
+    <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">I contenuti, come li ha visti il pubblico.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The content, as the audience saw it.</sc-if></h2>
+    <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:16px;line-height:1.6;color:#5F5257;max-width:52ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Grafiche, shooting e caroselli prodotti in prima persona per clienti food e beauty. Ogni pezzo nasce da un formato ricorrente del piano editoriale, non da un template: è così che un feed diventa riconoscibile.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Graphics, shoots and carousels produced hands-on for food and beauty clients. Each piece comes from a recurring format in the editorial plan, not from a template: that's how a feed becomes recognisable.</sc-if></p>
+    <div style="display:flex;gap:28px;margin-top:clamp(14px,2.6vh,26px);flex-wrap:wrap;">
+      <div><div style="font-family:'Gloock',serif;font-size:26px;">{{galleryCount}}</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">contenuti pubblicati</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">published pieces</sc-if></div></div>
+      <div><div style="font-family:'Gloock',serif;font-size:26px;">{{galleryFormats}}</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">formati diversi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">different formats</sc-if></div></div>
+    </div>
+    <a href="galleria.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Guarda tutte le foto →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">See all the photos →</sc-if></a>
+  </div>
+</section>
+
+<section class="gf-slide" data-screen-label="07 Metodo" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,11.5vh,96px) 7vw clamp(48px,9vh,76px);overflow:hidden;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il metodo</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The method</sc-if></div>
   <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);margin:14px 0 0;max-width:24ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Tre fasi, ogni volta. Con una prova per ciascuna.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Three phases, every time. Each with proof.</sc-if></h2>
   <div class="gf-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vh,20px);margin-top:clamp(20px,4vh,40px);">
@@ -151,7 +185,7 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
   </div>
 </section>
 
-<section class="gf-slide" data-screen-label="07 Esperienza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);overflow:hidden;">
+<section class="gf-slide" data-screen-label="08 Esperienza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);overflow:hidden;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;margin-bottom:8px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il percorso</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Background</sc-if></div><h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(24px,3vw,44px);margin:0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Esperienza, formazione, strumenti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Experience, education, tools</sc-if></h2>
   <div style="display:flex;gap:22px;margin-top:10px;font-size:14px;color:#8A7378;flex-wrap:wrap;"><span><strong style="color:#2B2226;font-weight:600;">3</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">anni in agenzia</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">years in an agency</sc-if></span><span><strong style="color:#2B2226;font-weight:600;">3</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">settori: food, retail, beauty</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">sectors: food, retail, beauty</sc-if></span><span><strong style="color:#2B2226;font-weight:600;">4</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">certifications</sc-if></span></div>
   <div class="gf-cols" style="display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;margin-top:clamp(10px,2.2vh,32px);align-items:start;">
@@ -185,7 +219,7 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
   </div>
 </section>
 
-<section class="gf-slide" data-screen-label="08 Contatti" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;background:#FFFDFC;text-align:center;">
+<section class="gf-slide" data-screen-label="09 Contatti" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;background:#FFFDFC;text-align:center;">
   <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contatti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Contact</sc-if></div>
   <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(30px,4.4vw,66px);margin:14px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Parliamone.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Let's talk.</sc-if></h2>
   <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:17px;line-height:1.65;color:#5F5257;max-width:58ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Sono Giulia, romana. Da tre anni gestisco in agenzia i social di attività locali, producendo tutto in prima persona. Cerco una nuova agenzia dove portare questo metodo su brand più grandi: se cercate una SMM che produce e misura, scrivetemi — rispondo entro 24 ore.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">I'm Giulia, based in Rome. For three years I've managed local businesses' social media at an agency, producing everything hands-on. I'm looking for a new agency where this method can scale to bigger brands: if you need an SMM who produces and measures, write me — I reply within 24 hours.</sc-if></p>
@@ -231,7 +265,7 @@ a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
 class Component extends DCLogic {
   state = { idx: 0, lang: (()=>{ try { return localStorage.getItem('gf_lang') || 'it'; } catch(e){ return 'it'; } })() };
   scroller = React.createRef();
-  TOTAL = 8;
+  TOTAL = 9;
 
   isDesktop() { try { return window.matchMedia('(min-width: 992px)').matches; } catch(e){ return true; } }
   componentDidMount() {
@@ -288,9 +322,10 @@ class Component extends DCLogic {
     const navDefs = [
       { it: 'Home', en: 'Home', i: 0 },
       { it: 'Progetti', en: 'Work', i: 2 },
-      { it: 'Metodo', en: 'Method', i: 5 },
-      { it: 'Esperienza', en: 'Experience', i: 6 },
-      { it: 'Contatti', en: 'Contact', i: 7 }
+      { it: 'Lavori', en: 'Gallery', i: 5 },
+      { it: 'Metodo', en: 'Method', i: 6 },
+      { it: 'Esperienza', en: 'Experience', i: 7 },
+      { it: 'Contatti', en: 'Contact', i: 8 }
     ];
     const activeFor = (i, k) => {
       const next = navDefs[k + 1] ? navDefs[k + 1].i : this.TOTAL;
@@ -302,10 +337,30 @@ class Component extends DCLogic {
       style: 'background:none;border:none;cursor:pointer;font-family:Work Sans,sans-serif;font-size:14px;padding:0;letter-spacing:0.02em;' +
         (activeFor(d.i, k) ? 'color:#2B2226;font-weight:600;border-bottom:2px solid #C28A94;' : 'color:#8A7378;font-weight:400;border-bottom:2px solid transparent;')
     }));
+    // Galleria "I miei lavori": le foto si aggiungono in assets/gallery.js, non qui.
+    // Qui in home si mostrano solo le prime 9; tutte le altre vivono in galleria.dc.html.
+    const gallery = (Array.isArray(window.GF_GALLERY) ? window.GF_GALLERY : []).filter((g) => g && g.file);
+    const galleryItems = gallery.slice(0, 9).map((g) => {
+      const label = (it ? g.it : (g.en || g.it)) || '';
+      const meta = (it ? g.metaIt : (g.metaEn || g.metaIt)) || '';
+      const caption = [label, meta].filter(Boolean).join(' — ');
+      const contain = g.fit === 'contain';
+      return {
+        src: g.file,
+        alt: caption,
+        title: caption,
+        label,
+        meta,
+        imgStyle: 'width:100%;height:100%;display:block;object-position:center;object-fit:' +
+          (contain ? 'contain;padding:8px;box-sizing:border-box;background:#F6E7E4;' : 'cover;')
+      };
+    });
     const btn = (on) => 'border:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:Work Sans,sans-serif;' +
       (on ? 'background:#2B2226;color:#FBF4F1;' : 'background:transparent;color:#8A7378;');
     return {
-      it, en, navItems,
+      it, en, navItems, galleryItems,
+      galleryCount: gallery.length,
+      galleryFormats: new Set(gallery.map((g) => (it ? g.it : (g.en || g.it)) || '').filter(Boolean)).size,
       scrollerRef: this.scroller,
       onScroll: (e) => {
         const el = e.currentTarget;
