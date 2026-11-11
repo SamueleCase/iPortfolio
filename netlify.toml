@@ -1,0 +1,28 @@
+# Sito statico: nessuna build, si pubblica la cartella principale.
+[build]
+  publish = "."
+  command = ""
+
+# Materiale di riferimento del design: mai online.
+[[redirects]]
+  from = "/_design-handoff/*"
+  to = "/404"
+  status = 404
+  force = true
+
+# Cache lunga per font e librerie (nomi stabili), breve per il resto.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

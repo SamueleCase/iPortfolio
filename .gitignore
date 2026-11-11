@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Zip originale dell'handoff (il contenuto è in _design-handoff/)
+*.zip
+
+# Strumenti locali
+.claude/
+node_modules/

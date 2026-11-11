@@ -1,0 +1,13 @@
+/* =============================================================
+   case.css — lavori/*.html e galleria.html (sottoagente B)
+   Il colore del caso arriva da <body data-brand="…"> → --brand / --brand-ink.
+   ============================================================= */
+
+/* Fascia superiore nel colore del brand (base fissata in tappa 1) */
+.case-top {
+  background: var(--brand);
+  color: var(--brand-ink);
+  padding-bottom: clamp(44px, 5vw, 84px);
+}
+
+.page-case { background: var(--cream); color: var(--ink); }

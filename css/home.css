@@ -1,0 +1,12 @@
+/* =============================================================
+   home.css — solo index.html (sottoagente A)
+   Usa le variabili di style.css; non ridefinire colori qui.
+   ============================================================= */
+
+/* 01 Hero (base fissata in tappa 1) */
+.hero {
+  background: var(--sig);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}

@@ -1,385 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-<!-- Elenco delle foto della galleria "I miei lavori": si modifica solo questo file. -->
-<script src="./assets/gallery.js"></script>
+<!-- SEO:START — blocco gestito dal sottoagente D (title, description, canonical, Open Graph, favicon) -->
+<title>Giulia Fadlon — Social Media Manager a Roma</title>
+<meta name="description" content="Social media manager a Roma dal 2023: strategia, reel, shooting e Meta Ads per attività locali. Contenuti che riempiono i locali, non solo i feed.">
+<link rel="canonical" href="https://giuliafadlonportoflio.netlify.app/">
+<!-- SEO:END -->
+<script>(function(d){d.className+=' js';try{var w=sessionStorage.getItem('gf-wipe');if(w&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.className+=' wipe-in';d.style.setProperty('--wipe-bg',JSON.parse(w).bg)}}catch(e){}})(document.documentElement)</script>
+<link rel="preload" href="/assets/fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/caveat-brush-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/home.css">
+<script src="/js/vendor/lenis.min.js" defer></script>
+<script src="/js/vendor/gsap.min.js" defer></script>
+<script src="/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/js/lang/en.js" defer></script>
+<script src="/js/i18n.js" defer></script>
+<script src="/js/content/faq.js" defer></script>
+<script src="/js/main.js" defer></script>
+<script src="/js/home.js" defer></script>
 </head>
-<body>
-<x-dc>
-<helmet>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Work+Sans:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
-<style>
-html,body{margin:0;padding:0;background:#FBF4F1;overflow:hidden;}
-a{color:#8A5560;text-decoration:none;}a:hover{color:#2B2226;}
-[data-scroller]{scrollbar-width:none;}
-[data-scroller]::-webkit-scrollbar{display:none;}
-::selection{background:#F0DCDF;}
-.gf-feed{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:8px;width:100%;max-width:min(100%,66vh);aspect-ratio:1/1;}
-.gf-tile{position:relative;overflow:hidden;border-radius:10px;margin:0;aspect-ratio:1/1;border:1px solid #EDDCDE;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);}
-.gf-tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 7px;background:linear-gradient(0deg,rgba(43,34,38,0.88) 45%,rgba(43,34,38,0));color:#FBF4F1;pointer-events:none;}
-@media (max-width: 991.98px){
-  .gf-feed{max-width:none !important;aspect-ratio:auto !important;grid-template-rows:none !important;}
-}
-@media (max-width: 991.98px){
-  html{scroll-snap-type:y proximity;}
-  html,body{overflow:auto;height:auto;}
-  .gf-root{height:auto !important;overflow:visible !important;}
-  .gf-scroller{display:block !important;height:auto !important;overflow:visible !important;scroll-snap-type:none !important;}
-  .gf-slide{width:100% !important;height:auto !important;min-height:100vh !important;min-height:100svh !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;gap:26px !important;padding:84px 6vw 112px !important;overflow:visible !important;}
-  .gf-slide a{overflow-wrap:anywhere;}
-  .gf-heromedia{height:min(48vh,400px) !important;border-radius:18px !important;margin-top:0 !important;flex:0 0 auto;}
-  .gf-media{height:260px !important;flex:0 0 auto;}
-  .gf-3col{display:grid !important;grid-template-columns:1fr !important;}
-  .gf-cols{display:flex !important;flex-direction:column !important;gap:22px !important;}
-  .gf-top{position:fixed !important;}
-  .gf-bottom{position:fixed !important;background:linear-gradient(0deg,#FBF4F1 55%,rgba(251,244,241,0));padding-top:26px !important;}
-  .gf-copy{position:static !important;margin-top:20px;}
-}
-@keyframes gfBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
-</style>
-</helmet>
-<div class="gf-root" style="height:100vh;background:#FBF4F1;font-family:'Work Sans',sans-serif;color:#2B2226;position:relative;overflow:hidden;">
+<body class="page-home">
+<a class="skip-link" href="#main">Vai al contenuto</a>
 
-<div class="gf-scroller" data-scroller="1" ref="{{scrollerRef}}" onScroll="{{onScroll}}" style="display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;">
-
-<section class="gf-slide" data-screen-label="01 Hero" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.12fr 0.88fr;padding:clamp(56px,10vh,84px) 5vw clamp(64px,10vh,76px);gap:3vw;overflow:hidden;">
-  <div style="display:flex;flex-direction:column;justify-content:center;min-width:0;">
-    <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Social Media Manager</div>
-    <h1 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(32px,4.9vw,76px);line-height:1.05;margin:16px 0 0;text-wrap:pretty;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contenuti che riempiono i locali, non solo i feed.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content that fills venues, not just feeds.</sc-if></h1>
-    <p style="margin:clamp(12px,2vh,20px) 0 0;font-size:17px;line-height:1.6;color:#5F5257;max-width:48ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Strategia, produzione e analisi per brand food e lifestyle. Ultimo lancio: 350 persone in fila all'inaugurazione di una pizzeria, partendo da zero follower.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Strategy, production and analytics for food and lifestyle brands. Latest launch: 350 people queuing at a pizzeria opening, starting from zero followers.</sc-if></p>
-    <div style="display:flex;gap:12px;margin-top:clamp(18px,3.2vh,32px);align-items:center;flex-wrap:wrap;">
-      <button onClick="{{goProjects}}" style="background:#2B2226;color:#FBF4F1;padding:15px 28px;border-radius:999px;font-weight:500;font-size:15px;border:none;cursor:pointer;font-family:'Work Sans',sans-serif;" style-hover="background:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Guarda i progetti →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">See the work →</sc-if></button>
-      <a href="assets/cv-giulia-fadlon.pdf" target="_blank" style="border:1px solid #D9BFC3;color:#2B2226;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="border-color:#8A5560;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Scarica il CV</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Download CV</sc-if></a>
+<header class="hero" id="top">
+  <nav class="nav nav--home" aria-label="Principale">
+    <a class="nav__logo" href="/">Giulia Fadlon</a>
+    <div class="nav__links">
+      <a class="nav__link" href="#lavori">Lavori</a>
+      <a class="nav__link" href="#metodo">Metodo</a>
+      <a class="nav__link" href="#percorso">Percorso</a>
+      <a class="nav__link" href="#contatti">Contatti</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Lingua / Language"><span data-lang="it">IT</span><span aria-hidden="true">/</span><span data-lang="en">EN</span></button>
     </div>
-    <div style="display:flex;gap:26px;margin-top:clamp(20px,4.2vh,44px);font-size:14px;color:#8A7378;flex-wrap:wrap;">
-      <span><strong style="color:#2B2226;font-weight:600;">0 → 5.2K</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">organici in 3 mesi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">organic in 3 months</sc-if></span>
-      <span><strong style="color:#2B2226;font-weight:600;">+240%</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">follower in 4 mesi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">followers in 4 months</sc-if></span>
-      <span><strong style="color:#2B2226;font-weight:600;">8</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">clienti gestiti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">clients managed</sc-if></span>
-    </div>
-    <div class="d-lg-none" style="margin-top:26px;font-size:13px;color:#8A5560;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;animation:gfBounce 1.6s infinite;">↓</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Scorri per esplorare</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Scroll to explore</sc-if></div>
-  </div>
-  <div class="gf-heromedia" style="position:relative;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,#F6E7E4 0%,#EDD6D5 100%);border-radius:18px 18px 0 0;margin-top:12px;min-width:0;">
-    <img src="assets/giulia-busto-intero.png" alt="Giulia Fadlon" style="display:block;max-height:92%;max-width:88%;object-fit:contain;object-position:bottom;" />
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="02 Showreel" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;">
-  <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Showreel</div>
-  <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);margin:14px 0 0;text-align:center;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">45 secondi di lavoro, prima di ogni parola.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">45 seconds of work, before any words.</sc-if></h2>
-  <div style="width:min(880px,80vw,82vh);aspect-ratio:16/9;margin-top:clamp(16px,3vh,32px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">
-    <div style="width:72px;height:72px;border-radius:999px;background:#2B2226;color:#FBF4F1;display:flex;align-items:center;justify-content:center;font-size:22px;">▶</div>
-    <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">showreel 45–60s — reel, grafiche, shooting</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">45–60s showreel — reels, graphics, shoots</sc-if></span>
-  </div>
-  <p style="margin:clamp(10px,2vh,20px) 0 0;font-size:14px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Una selezione dei contenuti prodotti tra il 2023 e il 2026.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">A selection of content produced between 2023 and 2026.</sc-if></p>
-</section>
-
-<section class="gf-slide" data-screen-label="03 Case Pizza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.05fr 0.95fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;background:#FFFDFC;">
-  <div style="min-width:0;">
-    <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Case study 01 · Instagram · Food</div>
-    <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">350+ persone in fila all'inaugurazione. Da zero follower.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">350+ people queuing on opening day. From zero followers.</sc-if></h2>
-    <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:16px;line-height:1.6;color:#5F5257;max-width:52ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Pizza a Portafoglio — lancio completo di una nuova pizzeria: video in dialetto napoletano con il titolare come volto del brand, dal pre-opening al sold-out.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Pizza a Portafoglio — full launch of a new pizzeria: Neapolitan-dialect videos with the owner as the face of the brand, from pre-opening to a sold-out debut.</sc-if></p>
-    <div style="display:flex;gap:28px;margin-top:clamp(14px,2.6vh,26px);flex-wrap:wrap;">
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">12K+</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">view organiche in 48h</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">organic views in 48h</sc-if></div></div>
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">3 <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">fasi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">phases</sc-if></div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">pre-lancio, lancio, community</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">pre-launch, launch, community</sc-if></div></div>
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">100%</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">organico, zero adv</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">organic, no paid</sc-if></div></div>
-    </div>
-    <a href="case-pizza.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Leggi il case study →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Read the case study →</sc-if></a>
-  </div>
-  <div class="gf-media" style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
-    <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">foto: fila all'inaugurazione</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">photo: opening-day queue</sc-if></span>
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="04 Case Negozio" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:0.95fr 1.05fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;">
-  <div class="gf-media" style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
-    <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">frame: sketch dei titolari</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">frame: owners' sketch video</sc-if></span>
-  </div>
-  <div style="min-width:0;">
-    <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Case study 02 · TikTok + Instagram + Facebook · Retail</div>
-    <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">0 → 5.2K follower in 3 mesi. Tutto organico.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">0 → 5.2K followers in 3 months. All organic.</sc-if></h2>
-    <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:16px;line-height:1.6;color:#5F5257;max-width:52ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Negozio di quartiere gestito da due fratelli di origine asiatica che parlano in perfetto romanesco: il contrasto culturale trasformato in format comici e nella "Ruota della Fortuna".</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">A neighbourhood shop run by two brothers of Asian origin speaking perfect Roman dialect: cultural contrast turned into comedy formats and the "Wheel of Fortune".</sc-if></p>
-    <div style="display:flex;gap:28px;margin-top:clamp(14px,2.6vh,26px);flex-wrap:wrap;">
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">8.5%</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">engagement (media settore 1.2%)</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">engagement (industry avg 1.2%)</sc-if></div></div>
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">3</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">piattaforme coordinate</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">platforms coordinated</sc-if></div></div>
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">+<sc-if value="{{it}}" hint-placeholder-val="{{ true }}">visite</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">visits</sc-if></div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">traffico reale in negozio</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">real in-store traffic</sc-if></div></div>
-    </div>
-    <a href="case-negozio.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Leggi il case study →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Read the case study →</sc-if></a>
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="05 Case Estetico" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:1.05fr 0.95fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;background:#FFFDFC;">
-  <div style="min-width:0;">
-    <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;">Case study 03 · Instagram · Beauty</div>
-    <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">+240% di follower in 4 mesi, educando invece di vendere.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">+240% followers in 4 months, by teaching instead of selling.</sc-if></h2>
-    <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:16px;line-height:1.6;color:#5F5257;max-width:52ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Centro di estetica avanzata posizionato come autorità del settore: myth-busting, before/after con contesto clinico e collaborazioni influencer autentiche.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">An advanced-aesthetics clinic positioned as an industry authority: myth-busting, before/afters with clinical context and authentic influencer collaborations.</sc-if></p>
-    <div style="display:flex;gap:28px;margin-top:clamp(14px,2.6vh,26px);flex-wrap:wrap;">
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">5</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">collab influencer, ROI positivo</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">influencer collabs, positive ROI</sc-if></div></div>
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">Vero/Falso</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">format a più alto engagement</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">highest-engagement format</sc-if></div></div>
-    </div>
-    <a href="case-estetico.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Leggi il case study →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Read the case study →</sc-if></a>
-  </div>
-  <div class="gf-media" style="height:min(62vh,560px);border-radius:14px;background:repeating-linear-gradient(45deg,#F6E7E4 0 14px,#FBF4F1 14px 28px);border:1px dashed #C28A94;display:flex;align-items:center;justify-content:center;">
-    <span style="font-family:monospace;font-size:13px;color:#8A5560;background:#FBF4F1;border:1px dashed #C28A94;padding:7px 12px;border-radius:6px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">carosello educativo / before-after</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">educational carousel / before-after</sc-if></span>
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="06 Lavori" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:grid;grid-template-columns:0.95fr 1.05fr;gap:4vw;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);align-items:center;overflow:hidden;">
-  <div style="display:flex;align-items:center;justify-content:center;min-width:0;">
-    <div class="gf-feed">
-      <sc-for list="{{galleryItems}}" as="item" hint-placeholder-count="9">
-        <figure class="gf-tile" title="{{item.title}}">
-          <img src="{{item.src}}" alt="{{item.alt}}" loading="lazy" style="{{item.imgStyle}}" />
-          <figcaption>
-            <div style="font-size:11px;font-weight:600;line-height:1.25;letter-spacing:0.01em;">{{item.label}}</div>
-            <div style="font-size:10px;line-height:1.3;color:#E4CFD2;margin-top:1px;">{{item.meta}}</div>
-          </figcaption>
-        </figure>
-      </sc-for>
-    </div>
-  </div>
-  <div style="min-width:0;">
-    <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">I miei lavori</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Selected work</sc-if></div>
-    <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(28px,3.9vw,60px);line-height:1.08;margin:16px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">I contenuti, come li ha visti il pubblico.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The content, as the audience saw it.</sc-if></h2>
-    <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:16px;line-height:1.6;color:#5F5257;max-width:52ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Grafiche, shooting e caroselli prodotti in prima persona per clienti food e beauty. Ogni pezzo nasce da un formato ricorrente del piano editoriale, non da un template: è così che un feed diventa riconoscibile.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Graphics, shoots and carousels produced hands-on for food and beauty clients. Each piece comes from a recurring format in the editorial plan, not from a template: that's how a feed becomes recognisable.</sc-if></p>
-    <div style="display:flex;gap:28px;margin-top:clamp(14px,2.6vh,26px);flex-wrap:wrap;">
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">{{galleryCount}}</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">contenuti pubblicati</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">published pieces</sc-if></div></div>
-      <div><div style="font-family:'Gloock',serif;font-size:26px;">{{galleryFormats}}</div><div style="font-size:13px;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">formati diversi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">different formats</sc-if></div></div>
-    </div>
-    <a href="galleria.dc.html" style="display:inline-block;margin-top:clamp(16px,3vh,30px);background:#2B2226;color:#FBF4F1;padding:14px 26px;border-radius:999px;font-weight:500;font-size:15px;" style-hover="background:#8A5560;color:#FBF4F1;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Guarda tutte le foto →</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">See all the photos →</sc-if></a>
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="07 Metodo" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,11.5vh,96px) 7vw clamp(48px,9vh,76px);overflow:hidden;">
-  <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il metodo</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The method</sc-if></div>
-  <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);margin:14px 0 0;max-width:24ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Tre fasi, ogni volta. Con una prova per ciascuna.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Three phases, every time. Each with proof.</sc-if></h2>
-  <div class="gf-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vh,20px);margin-top:clamp(20px,4vh,40px);">
-    <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:clamp(18px,2.8vh,28px);">
-      <div style="font-family:'Gloock',serif;font-size:15px;color:#C28A94;">01</div>
-      <h3 style="font-family:'Gloock',serif;font-weight:400;font-size:23px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Strategia e piano editoriale</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Strategy and editorial plan</sc-if></h3>
-      <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Posizionamento, tono di voce e formati ricorrenti costruiti sull'identità del cliente, non su template.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Positioning, tone of voice and recurring formats built on the client's identity, not on templates.</sc-if></p>
-      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Consegno: analisi competitor, posizionamento, piano editoriale e calendario mensile.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Deliverables: competitor analysis, positioning, editorial plan and monthly calendar.</sc-if></p>
-      <div style="margin-top:18px;padding-top:14px;border-top:1px solid #EDDCDE;font-size:14px;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">→ Il titolare in dialetto: 350+ in fila</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">→ Owner-led dialect videos: 350+ queue</sc-if></div>
-    </div>
-    <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:clamp(18px,2.8vh,28px);">
-      <div style="font-family:'Gloock',serif;font-size:15px;color:#C28A94;">02</div>
-      <h3 style="font-family:'Gloock',serif;font-weight:400;font-size:23px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Produzione contenuti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Content production</sc-if></h3>
-      <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Reel, grafiche, shooting e copy: giro con il set in borsa e produco dove il contenuto succede.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Reels, graphics, shoots and copy: I carry the set in my bag and produce where content happens.</sc-if></p>
-      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Consegno: reel montati, grafiche feed e stories, shooting sul posto, copy.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Deliverables: edited reels, feed and stories graphics, on-site shoots, copy.</sc-if></p>
-      <div style="margin-top:18px;padding-top:14px;border-top:1px solid #EDDCDE;font-size:14px;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">→ 12K+ view organiche in 48 ore</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">→ 12K+ organic views in 48 hours</sc-if></div>
-    </div>
-    <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:clamp(18px,2.8vh,28px);">
-      <div style="font-family:'Gloock',serif;font-size:15px;color:#C28A94;">03</div>
-      <h3 style="font-family:'Gloock',serif;font-weight:400;font-size:23px;margin:10px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Adv e analisi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Ads and analytics</sc-if></h3>
-      <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Meta Ads, A/B testing e report mensili: ogni scelta creativa risponde a un numero.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Meta Ads, A/B testing and monthly reports: every creative choice answers to a number.</sc-if></p>
-      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#8A7378;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Consegno: setup campagne, A/B test creativi, report mensile con azioni.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Deliverables: campaign setup, creative A/B tests, monthly report with actions.</sc-if></p>
-      <div style="margin-top:18px;padding-top:14px;border-top:1px solid #EDDCDE;font-size:14px;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">→ Engagement 8.5% vs 1.2% di settore</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">→ 8.5% engagement vs 1.2% industry</sc-if></div>
-    </div>
-  </div>
-  <div style="display:flex;align-items:baseline;gap:10px 16px;margin-top:clamp(14px,2.4vh,24px);flex-wrap:wrap;background:#FFFDFC;border:1px solid #EDDCDE;border-radius:14px;padding:14px 22px;font-size:14px;color:#5F5257;">
-    <strong style="color:#2B2226;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il ciclo con ogni cliente</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">The cycle with every client</sc-if></strong>
-    <span><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Audit e obiettivi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Audit and goals</sc-if> <span style="color:#C28A94;">→</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Piano 90 giorni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">90-day plan</sc-if> <span style="color:#C28A94;">→</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Produzione settimanale</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Weekly production</sc-if> <span style="color:#C28A94;">→</span> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Report mensile</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Monthly report</sc-if></span>
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="08 Esperienza" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,10.5vh,96px) 6vw clamp(44px,8.5vh,76px);overflow:hidden;">
-  <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;margin-bottom:8px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Il percorso</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Background</sc-if></div><h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(24px,3vw,44px);margin:0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Esperienza, formazione, strumenti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Experience, education, tools</sc-if></h2>
-  <div style="display:flex;gap:22px;margin-top:10px;font-size:14px;color:#8A7378;flex-wrap:wrap;"><span><strong style="color:#2B2226;font-weight:600;">3</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">anni in agenzia</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">years in an agency</sc-if></span><span><strong style="color:#2B2226;font-weight:600;">3</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">settori: food, retail, beauty</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">sectors: food, retail, beauty</sc-if></span><span><strong style="color:#2B2226;font-weight:600;">4</strong> <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">certifications</sc-if></span></div>
-  <div class="gf-cols" style="display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;margin-top:clamp(10px,2.2vh,32px);align-items:start;">
-    <div style="display:grid;gap:clamp(10px,1.8vh,18px);align-content:start;"><div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Esperienza</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Experience</sc-if></div>
-      <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-left:3px solid #C28A94;border-radius:0 12px 12px 0;padding:clamp(12px,2vh,18px) 20px;">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><strong style="font-size:17px;">Social Media Manager <span style="font-weight:400;color:#8A7378;">· <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">in agenzia</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">agency</sc-if></span></strong><span style="font-size:13px;color:#8A7378;white-space:nowrap;">2023 — <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">oggi</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">now</sc-if></span></div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.5;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">8 clienti dell'agenzia in food, retail e beauty, tra cui Pizza a Portafoglio e un centro di estetica avanzata. Strategia, produzione e adv end-to-end.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">8 agency clients across food, retail and beauty, including Pizza a Portafoglio and an advanced-aesthetics clinic. End-to-end strategy, production and ads.</sc-if></p>
-        <div style="margin-top:8px;font-size:13.5px;color:#8A5560;">→ <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Retention media: 12+ mesi per cliente</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Average retention: 12+ months per client</sc-if></div>
-      </div>
-      <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:12px 16px;font-size:13.5px;line-height:1.6;color:#5F5257;">
-        <strong style="color:#2B2226;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Strumenti per fase di lavoro</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Tools by phase</sc-if></strong><br />
-        <sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Pianifico — Meta Business Suite, GA4 · Produco — Canva Pro, Adobe Express, CapCut · Misuro — Meta Ads Manager, report mensili</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Plan — Meta Business Suite, GA4 · Produce — Canva Pro, Adobe Express, CapCut · Measure — Meta Ads Manager, monthly reports</sc-if>
-      </div>
-    </div>
-    <div style="display:grid;gap:14px;align-content:start;"><div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C28A94;font-weight:700;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Formazione e certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Education and certifications</sc-if></div>
-      <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:clamp(12px,2.2vh,18px) 22px;">
-        <strong style="font-size:16px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Diploma Tecnico in Marketing</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Technical Diploma in Marketing</sc-if></strong>
-        <div style="font-size:14px;color:#8A5560;margin-top:3px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Istituto tecnico, indirizzo Marketing · 2023</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Technical institute, Marketing track · 2023</sc-if></div>
-        <p style="margin:6px 0 0;font-size:14px;line-height:1.55;color:#5F5257;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Diplomata con votazione </sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Graduated with full marks, </sc-if><strong style="color:#2B2226;">96/100</strong>.</p>
-      </div>
-      <div style="background:#FFFDFC;border:1px solid #EDDCDE;border-radius:12px;padding:clamp(12px,2.2vh,18px) 22px;">
-        <strong style="font-size:16px;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Certificazioni</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Certifications</sc-if></strong>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-top:10px;font-size:14px;color:#5F5257;line-height:1.4;">
-          <span><strong style="color:#2B2226;">Meta Blueprint</strong><br />Digital Marketing Associate · 2023</span>
-          <span><strong style="color:#2B2226;">Google Analytics</strong><br />GA4 Certification · 2024</span>
-          <span><strong style="color:#2B2226;">HubSpot</strong><br />Social Media Marketing · 2023</span>
-          <span><strong style="color:#2B2226;">Meta Ads</strong><br />Media Planning Professional · 2024</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="gf-slide" data-screen-label="09 Contatti" style="flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(64px,11.5vh,96px) 8vw clamp(48px,9vh,76px);overflow:hidden;background:#FFFDFC;text-align:center;">
-  <div style="font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#8A5560;font-weight:600;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Contatti</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Contact</sc-if></div>
-  <h2 style="font-family:'Gloock',serif;font-weight:400;font-size:clamp(30px,4.4vw,66px);margin:14px 0 0;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Parliamone.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Let's talk.</sc-if></h2>
-  <p style="margin:clamp(10px,1.8vh,18px) 0 0;font-size:17px;line-height:1.65;color:#5F5257;max-width:58ch;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Sono Giulia, romana. Da tre anni gestisco in agenzia i social di attività locali, producendo tutto in prima persona. Cerco una nuova agenzia dove portare questo metodo su brand più grandi: se cercate una SMM che produce e misura, scrivetemi — rispondo entro 24 ore.</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">I'm Giulia, based in Rome. For three years I've managed local businesses' social media at an agency, producing everything hands-on. I'm looking for a new agency where this method can scale to bigger brands: if you need an SMM who produces and measures, write me — I reply within 24 hours.</sc-if></p>
-  <div style="display:flex;gap:12px;margin-top:clamp(18px,3.4vh,34px);flex-wrap:wrap;justify-content:center;">
-    <a href="mailto:giuliis.fa.marketing@gmail.com" style="background:#2B2226;color:#FBF4F1;padding:16px 30px;border-radius:999px;font-weight:500;font-size:16px;" style-hover="background:#8A5560;color:#FBF4F1;">giuliis.fa.marketing@gmail.com</a>
-    <a href="assets/cv-giulia-fadlon.pdf" target="_blank" style="border:1px solid #D9BFC3;color:#2B2226;padding:15px 28px;border-radius:999px;font-weight:500;font-size:16px;" style-hover="border-color:#8A5560;color:#8A5560;"><sc-if value="{{it}}" hint-placeholder-val="{{ true }}">Scarica il CV</sc-if><sc-if value="{{en}}" hint-placeholder-val="{{ false }}">Download CV</sc-if></a>
-    <a href="https://www.linkedin.com/in/giulia-fadlon" target="_blank" style="border:1px solid #D9BFC3;color:#2B2226;padding:15px 28px;border-radius:999px;font-weight:500;font-size:16px;" style-hover="border-color:#8A5560;color:#8A5560;">LinkedIn</a>
-  </div>
-  <div style="display:flex;gap:26px;margin-top:clamp(16px,3vh,30px);font-size:14px;color:#8A7378;flex-wrap:wrap;justify-content:center;">
-    <span>+39 320 241 6567</span>
-    <span>Roma, Italia</span>
-    <a href="https://www.instagram.com/giuliis.smm" target="_blank">@giuliis.smm</a>
-  </div>
-  <div class="gf-copy" style="position:absolute;bottom:64px;font-size:12px;color:#B9AAA4;">© 2026 Giulia Fadlon</div>
-</section>
-</div>
-
-<div class="gf-top" style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;box-sizing:border-box;z-index:10;background:linear-gradient(180deg,rgba(251,244,241,0.94) 55%,rgba(251,244,241,0));">
-  <button onClick="{{goHome}}" style="background:none;border:none;cursor:pointer;font-family:'Gloock',serif;font-size:19px;color:#2B2226;padding:0;">Giulia Fadlon</button>
-  <nav class="d-none d-lg-flex" style="display:flex;gap:24px;align-items:center;">
-    <sc-for list="{{navItems}}" as="item" hint-placeholder-count="6">
-      <button onClick="{{item.go}}" style="{{item.style}}" style-hover="color:#8A5560;">{{item.label}}</button>
-    </sc-for>
+    <button class="lang-toggle lang-toggle--mobile" type="button" data-lang-toggle aria-label="Lingua / Language"><span data-lang="it">IT</span><span aria-hidden="true">/</span><span data-lang="en">EN</span></button>
+    <button class="menu-btn" type="button" data-menu-open aria-controls="menu" aria-expanded="false">Menu</button>
   </nav>
-  <div style="display:flex;gap:2px;align-items:center;border:1px solid #E4CFD2;border-radius:999px;padding:3px;">
-    <button onClick="{{setIt}}" style="{{itBtnStyle}}">IT</button>
-    <button onClick="{{setEn}}" style="{{enBtnStyle}}">EN</button>
+
+  <!-- ===== HOME:HERO — sottoagente A (versione desktop + versione mobile) ===== -->
+</header>
+
+<main id="main">
+  <!-- ===== HOME:SECTIONS — sottoagente A: fascia, numeri, #lavori (caos → elenco), showreel + contenuti, #metodo, #percorso, FAQ ===== -->
+</main>
+
+<footer class="contact" id="contatti">
+  <!-- ===== HOME:FOOTER — sottoagente A: "Parliamone." + contatti ===== -->
+</footer>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu__top">
+    <span class="menu__logo">Giulia Fadlon</span>
+    <button class="menu__close" type="button" data-menu-close>Chiudi</button>
   </div>
+  <nav class="menu__links" aria-label="Menu">
+    <a href="#lavori">Lavori</a>
+    <a href="#metodo">Metodo</a>
+    <a href="#percorso">Percorso</a>
+    <a href="#contatti" class="is-accent">Contatti</a>
+  </nav>
+  <div class="menu__note">rispondo entro 24 ore</div>
 </div>
-
-<div class="gf-bottom" style="position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;box-sizing:border-box;z-index:10;">
-  <div style="font-size:13px;color:#8A7378;letter-spacing:0.12em;min-width:72px;">{{counter}}</div>
-  <div style="flex:1;max-width:520px;height:2px;background:#EDDCDE;margin:0 24px;border-radius:99px;"><div style="{{progressStyle}}"></div></div>
-  <div style="display:flex;gap:10px;">
-    <button onClick="{{prev}}" aria-label="Precedente" style="width:42px;height:42px;border-radius:999px;border:1px solid #D9BFC3;background:#FFFDFC;color:#2B2226;cursor:pointer;font-size:16px;" style-hover="border-color:#8A5560;color:#8A5560;"><span class="d-none d-lg-inline">←</span><span class="d-lg-none">↑</span></button>
-    <button onClick="{{next}}" aria-label="Successiva" style="width:42px;height:42px;border-radius:999px;border:1px solid #2B2226;background:#2B2226;color:#FBF4F1;cursor:pointer;font-size:16px;" style-hover="background:#8A5560;border-color:#8A5560;"><span class="d-none d-lg-inline">→</span><span class="d-lg-none">↓</span></button>
-  </div>
-</div>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;linguaIniziale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lingua&quot;}}">
-class Component extends DCLogic {
-  state = { idx: 0, lang: (()=>{ try { return localStorage.getItem('gf_lang') || 'it'; } catch(e){ return 'it'; } })() };
-  scroller = React.createRef();
-  TOTAL = 9;
-
-  isDesktop() { try { return window.matchMedia('(min-width: 992px)').matches; } catch(e){ return true; } }
-  componentDidMount() {
-    this.onKey = (e) => {
-      if (!this.isDesktop()) return;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); this.goTo(this.state.idx + 1); }
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); this.goTo(this.state.idx - 1); }
-    };
-    window.addEventListener('keydown', this.onKey);
-    this.onWheelN = (e) => {
-      if (!this.isDesktop()) return;
-      e.preventDefault();
-      const now = Date.now();
-      if (this._wheelLock && now - this._wheelLock < 650) return;
-      const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-      if (Math.abs(d) < 8) return;
-      this._wheelLock = now;
-      this.goTo(this.state.idx + (d > 0 ? 1 : -1));
-    };
-    if (this.scroller.current) this.scroller.current.addEventListener('wheel', this.onWheelN, { passive: false });
-    this.onWinScroll = () => {
-      if (this.isDesktop()) return;
-      const el = this.scroller.current; if (!el) return;
-      const y = window.scrollY + window.innerHeight * 0.35;
-      let i = 0;
-      Array.from(el.children).forEach((s, k) => { if (s.offsetTop <= y) i = k; });
-      if (i !== this.state.idx) { this.setState({ idx: i }); try { history.replaceState(null, '', '#s' + (i + 1)); } catch(err){} }
-    };
-    window.addEventListener('scroll', this.onWinScroll, { passive: true });
-    const m = (location.hash || '').match(/^#s(\d+)$/);
-    if (m) { const i = Math.min(this.TOTAL - 1, Math.max(0, parseInt(m[1], 10) - 1)); setTimeout(() => this.goTo(i, 'auto'), 60); }
-  }
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.onKey);
-    if (this.scroller.current && this.onWheelN) this.scroller.current.removeEventListener('wheel', this.onWheelN);
-    if (this.onWinScroll) window.removeEventListener('scroll', this.onWinScroll);
-  }
-
-  goTo(i, behavior) {
-    const el = this.scroller.current; if (!el) return;
-    const idx = Math.min(this.TOTAL - 1, Math.max(0, i));
-    if (this.isDesktop()) {
-      el.scrollTo({ left: idx * el.clientWidth, behavior: behavior || 'smooth' });
-    } else {
-      const sec = el.children[idx]; if (!sec) return;
-      window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 2, behavior: behavior || 'smooth' });
-    }
-  }
-
-  renderVals() {
-    const { idx, lang } = this.state;
-    const it = lang === 'it', en = !it;
-    const setLang = (l) => { try { localStorage.setItem('gf_lang', l); } catch(e){} this.setState({ lang: l }); };
-    const navDefs = [
-      { it: 'Home', en: 'Home', i: 0 },
-      { it: 'Progetti', en: 'Work', i: 2 },
-      { it: 'Lavori', en: 'Gallery', i: 5 },
-      { it: 'Metodo', en: 'Method', i: 6 },
-      { it: 'Esperienza', en: 'Experience', i: 7 },
-      { it: 'Contatti', en: 'Contact', i: 8 }
-    ];
-    const activeFor = (i, k) => {
-      const next = navDefs[k + 1] ? navDefs[k + 1].i : this.TOTAL;
-      return idx >= i && idx < next;
-    };
-    const navItems = navDefs.map((d, k) => ({
-      label: it ? d.it : d.en,
-      go: () => this.goTo(d.i),
-      style: 'background:none;border:none;cursor:pointer;font-family:Work Sans,sans-serif;font-size:14px;padding:0;letter-spacing:0.02em;' +
-        (activeFor(d.i, k) ? 'color:#2B2226;font-weight:600;border-bottom:2px solid #C28A94;' : 'color:#8A7378;font-weight:400;border-bottom:2px solid transparent;')
-    }));
-    // Galleria "I miei lavori": le foto si aggiungono in assets/gallery.js, non qui.
-    // Qui in home si mostrano solo le prime 9; tutte le altre vivono in galleria.dc.html.
-    const gallery = (Array.isArray(window.GF_GALLERY) ? window.GF_GALLERY : []).filter((g) => g && g.file);
-    const galleryItems = gallery.slice(0, 9).map((g) => {
-      const label = (it ? g.it : (g.en || g.it)) || '';
-      const meta = (it ? g.metaIt : (g.metaEn || g.metaIt)) || '';
-      const caption = [label, meta].filter(Boolean).join(' — ');
-      const contain = g.fit === 'contain';
-      return {
-        src: g.file,
-        alt: caption,
-        title: caption,
-        label,
-        meta,
-        imgStyle: 'width:100%;height:100%;display:block;object-position:center;object-fit:' +
-          (contain ? 'contain;padding:8px;box-sizing:border-box;background:#F6E7E4;' : 'cover;')
-      };
-    });
-    const btn = (on) => 'border:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:Work Sans,sans-serif;' +
-      (on ? 'background:#2B2226;color:#FBF4F1;' : 'background:transparent;color:#8A7378;');
-    return {
-      it, en, navItems, galleryItems,
-      galleryCount: gallery.length,
-      galleryFormats: new Set(gallery.map((g) => (it ? g.it : (g.en || g.it)) || '').filter(Boolean)).size,
-      scrollerRef: this.scroller,
-      onScroll: (e) => {
-        const el = e.currentTarget;
-        const i = Math.round(el.scrollLeft / el.clientWidth);
-        if (i !== this.state.idx) { this.setState({ idx: i }); try { history.replaceState(null, '', '#s' + (i + 1)); } catch(err){} }
-      },
-      goHome: () => this.goTo(0),
-      goProjects: () => this.goTo(2),
-      prev: () => this.goTo(idx - 1),
-      next: () => this.goTo(idx + 1),
-      setIt: () => setLang('it'),
-      setEn: () => setLang('en'),
-      itBtnStyle: btn(it),
-      enBtnStyle: btn(!it),
-      counter: String(idx + 1).padStart(2, '0') + ' / 0' + this.TOTAL,
-      progressStyle: 'height:2px;border-radius:99px;background:#8A5560;transition:width .3s;width:' + (((idx + 1) / this.TOTAL) * 100) + '%'
-    };
-  }
-}
-</script>
 </body>
 </html>
