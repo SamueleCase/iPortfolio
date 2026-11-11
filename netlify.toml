@@ -6,7 +6,7 @@
 # Materiale di riferimento del design: mai online.
 [[redirects]]
   from = "/_design-handoff/*"
-  to = "/404"
+  to = "/404.html"
   status = 404
   force = true
 

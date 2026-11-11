@@ -69,9 +69,11 @@
   --brand-ink: var(--brand-pizza-ink);
 
   /* — Font — */
-  --f-display: 'Anton', Impact, 'Arial Narrow', sans-serif;
-  --f-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --f-hand: 'Caveat Brush', 'Comic Sans MS', cursive;
+  /* Riserve identiche al mockup: le frecce ← → non sono nel sottoinsieme
+     "latin" dei font e vengono disegnate dal font di riserva. */
+  --f-display: 'Anton', sans-serif;
+  --f-body: 'Instrument Sans', sans-serif;
+  --f-hand: 'Caveat Brush', cursive;
   --f-mono: ui-monospace, Menlo, Consolas, monospace;
 
   /* — Layout — */
@@ -442,6 +444,13 @@ html.wipe-in body { visibility: hidden; animation: gf-unhide 0s 2s forwards; }
 /* Visibilità per breakpoint (sostituiscono --dblock/--mblock/--dflex/--mflex del mockup) */
 @media (min-width: 760px) { .only-mobile { display: none !important; } }
 @media (max-width: 759.98px) { .only-desktop { display: none !important; } }
+
+/* Pagina 404 */
+.nf { min-height: 100svh; display: flex; flex-direction: column; background: var(--sig); color: var(--cream); }
+.nf__main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 var(--px) clamp(48px, 6vw, 96px); }
+.nf__code { margin: 0; font-size: clamp(120px, 30vw, 460px); line-height: .9; }
+.nf__title { margin: 0; font-size: clamp(36px, 6vw, 104px); line-height: 1.04; color: var(--ink); }
+.nf__note { margin: 18px 0 28px; font-size: clamp(24px, 2.6vw, 40px); transform: rotate(-2deg); transform-origin: left; }
 
 /* 8. ACCESSIBILITÀ --------------------------------------------- */
 :focus-visible {
