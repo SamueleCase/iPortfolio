@@ -1,0 +1,50 @@
+# Redirect permanenti (301) dai vecchi indirizzi ai nuovi, così i link già condivisi
+# continuano a funzionare. Netlify applica una regola solo se il vecchio file non
+# esiste più; vince la prima regola che corrisponde (le più specifiche vanno sopra).
+# Le regole di netlify.toml (es. /_design-handoff/*) restano lì.
+
+# --- Sito v1 (branch backup/sito-v1) -----------------------------------------
+/case-pizza.dc.html          /lavori/pizza-a-portafoglio.html   301
+/case-pizza.dc               /lavori/pizza-a-portafoglio.html   301
+/case-negozio.dc.html        /lavori/negozio-di-quartiere.html  301
+/case-negozio.dc             /lavori/negozio-di-quartiere.html  301
+/case-estetico.dc.html       /lavori/centro-estetico.html       301
+/case-estetico.dc            /lavori/centro-estetico.html       301
+/galleria.dc.html            /galleria.html                     301
+/galleria.dc                 /galleria.html                     301
+/assets/cv-giulia-fadlon.pdf /assets/cv/cv-giulia-fadlon.pdf    301
+
+# Post della galleria v1 (ora WebP in /assets/img/)
+/assets/post/post-01.jpg                   /assets/img/post-01.webp  301
+/assets/post/post-02.png                   /assets/img/post-02.webp  301
+/assets/post/post-03.png                   /assets/img/post-03.webp  301
+/assets/post/post-04.jpg                   /assets/img/post-04.webp  301
+/assets/post/post-05.png                   /assets/img/post-05.webp  301
+/assets/post/post-06.png                   /assets/img/post-06.webp  301
+/assets/post/post-07.png                   /assets/img/post-07.webp  301
+/assets/post/post-08.png                   /assets/img/post-08.webp  301
+/assets/post/post-09.jpg                   /assets/img/post-09-1.webp  301
+
+# --- Design precedente (branch old-design) ------------------------------------
+/pages/case-pizza-portafoglio.html  /lavori/pizza-a-portafoglio.html   301
+/pages/case-pizza-portafoglio       /lavori/pizza-a-portafoglio.html   301
+/pages/case-negozio-articoli.html   /lavori/negozio-di-quartiere.html  301
+/pages/case-negozio-articoli        /lavori/negozio-di-quartiere.html  301
+/pages/case-centro-estetico.html    /lavori/centro-estetico.html       301
+/pages/case-centro-estetico         /lavori/centro-estetico.html       301
+# Vecchie pagine servizi (branding, shooting, social-ads, …): non esistono più
+/pages/*                            /                                  301
+# Vecchio CV ("GIULIA FADLON CV.pdf")
+/assets/pdf/*                       /assets/cv/cv-giulia-fadlon.pdf    301
+/assets/img/favicon.ico             /favicon.ico                       301
+/assets/img/favicon.png             /icon-192.png                      301
+/assets/img/apple-touch-icon.png    /apple-touch-icon.png              301
+/assets/img/post/post-01.jpg         /assets/img/post-01.webp  301
+/assets/img/post/post-02.png         /assets/img/post-02.webp  301
+/assets/img/post/post-03.png         /assets/img/post-03.webp  301
+/assets/img/post/post-04.jpg         /assets/img/post-04.webp  301
+/assets/img/post/post-05.png         /assets/img/post-05.webp  301
+/assets/img/post/post-06.png         /assets/img/post-06.webp  301
+/assets/img/post/post-07.png         /assets/img/post-07.webp  301
+/assets/img/post/post-08.png         /assets/img/post-08.webp  301
+/assets/img/post/post-09.jpg         /assets/img/post-09-1.webp  301

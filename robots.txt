@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_design-handoff/
+
+Sitemap: https://giuliafadlonportoflio.netlify.app/sitemap.xml
